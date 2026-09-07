@@ -20,10 +20,7 @@
         "RAII / 有界缓冲区",
         "性能分析 / 异步 I/O"
       ],
-      "projects": [
-        "landing-protection",
-        "video-pipeline"
-      ]
+      "projects": ["landing-protection", "video-pipeline"]
     },
     {
       "id": "edge",
@@ -37,10 +34,7 @@
         "NV12 / OpenCV",
         "H.265 硬件卸载"
       ],
-      "projects": [
-        "landing-protection",
-        "video-pipeline"
-      ]
+      "projects": ["landing-protection", "video-pipeline"]
     },
     {
       "id": "llm",
@@ -54,10 +48,7 @@
         "Open-loop / Closed-loop",
         "Pretraining / MPS"
       ],
-      "projects": [
-        "inference-lab",
-        "nanochat-lab"
-      ]
+      "projects": ["inference-lab", "nanochat-lab"]
     },
     {
       "id": "agents",
@@ -71,11 +62,7 @@
         "TypeScript / React",
         "DSH 插件扩展"
       ],
-      "projects": [
-        "my-agent",
-        "dsh-aside",
-        "trajectory-vault"
-      ]
+      "projects": ["my-agent", "dsh-aside", "trajectory-vault"]
     }
   ],
   "experience": [
@@ -84,19 +71,14 @@
       "org": "影石 Insta360 · Antigravity",
       "role": "感知导航 · 高性能计算工程师",
       "description": "担任无人机降落保护与多路视频编码项目的研发负责人，主导从立项、产品需求对齐、架构设计、开发优化，到飞控等团队联调与上线交付。",
-      "projects": [
-        "landing-protection",
-        "video-pipeline"
-      ]
+      "projects": ["landing-protection", "video-pipeline"]
     },
     {
       "period": "2021.09 — 2024.06",
       "org": "中国科学院大学 · 中国科学院上海微系统与信息技术研究所",
       "role": "电子信息 · 硕士",
       "description": "微系统技术国家重点实验室。研究视觉语言模型与域泛化，第一作者论文发表于 Image and Vision Computing。2021.09—2022.06 在中国科学技术大学电子科学与技术系联合培养课程学习；2022.08—2024.06 在研究所开展硕士研究。",
-      "projects": [
-        "dalsclip"
-      ],
+      "projects": ["dalsclip"],
       "lab": "微系统技术国家重点实验室"
     },
     {
@@ -108,35 +90,25 @@
     }
   ],
   "resumeSummary": "C++ / Linux 高性能系统工程背景，作为研发负责人推动无人机降落保护与多路视频编码从需求对齐、研发联调到产品上线，负责模型量化与端侧部署。电子信息硕士，具备视觉语言模型与域泛化研究经历；当前推进 LLM 推理测量、PyTorch 训练实践与 Coding Agent Runtime。",
-  "introTags": [
-    "影石 · HPC / 项目研发负责人",
-    "中国科学院大学 · 电子信息硕士"
-  ],
+  "introTags": ["影石 · HPC / 项目研发负责人", "中国科学院大学 · 电子信息硕士"],
   "focus": [
     {
       "title": "模型架构",
       "level": "研究与论文研读",
       "detail": "Transformer / Attention · CLIP / ViT · 域泛化",
-      "projects": [
-        "dalsclip",
-        "nanochat-lab"
-      ]
+      "projects": ["dalsclip", "nanochat-lab"]
     },
     {
       "title": "推理框架",
       "level": "在研",
       "detail": "vLLM · KV Cache · PagedAttention · Continuous Batching",
-      "projects": [
-        "inference-lab"
-      ]
+      "projects": ["inference-lab"]
     },
     {
       "title": "后训练管线",
       "level": "计划实践",
       "detail": "SFT → RL / GRPO → Evaluation",
-      "projects": [
-        "nanochat-lab"
-      ]
+      "projects": ["nanochat-lab"]
     }
   ],
   "portraitAlt": "张跃文在湖边的生活照，来自个人主页",
@@ -162,6 +134,44 @@
     ],
     "visionTitle": "希望成为 AI 进步的参与者。",
     "vision": "我对 AI 的兴趣始于好奇：它的能力边界在哪里，又会怎样改变我们的生活？我希望把这份好奇变成具体的贡献，哪怕只是让一次推理更高效、一个系统更可靠，或让一个工具更好用。期待在这个快速变化的时代，持续学习、亲手构建，也让 AI 更自然地走进真实生活。",
-    "source": "https://ywzhang1031.github.io/"
-  }
+    "source": "https://ywzhang1031.github.io/",
+    "mbtiImage": {
+      "src": "/images/intp-logician.svg",
+      "alt": "INTP 逻辑学家：戴紫色眼镜、手持药瓶的女性角色",
+      "source": "https://www.16personalities.com/intp-personality"
+    }
+  },
+  "resumePdf": "/files/yuewen-zhang-industry.pdf",
+  "socialLinks": [
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/ywzhang1031"
+    },
+    {
+      "id": "scholar",
+      "label": "谷歌学术",
+      "url": "https://scholar.google.com/citations?user=YDjSimgAAAAJ"
+    },
+    {
+      "id": "xiaohongshu",
+      "label": "小红书",
+      "url": "https://www.xiaohongshu.com/user/profile/66729cac000000001b017208"
+    },
+    {
+      "id": "wechat",
+      "label": "微信",
+      "url": "/images/wechat-qr.jpg"
+    },
+    {
+      "id": "homepage",
+      "label": "个人主页",
+      "url": "https://ywzhang1031.github.io/"
+    },
+    {
+      "id": "email",
+      "label": "邮箱",
+      "url": "mailto:z15000675672@gmail.com"
+    }
+  ]
 }

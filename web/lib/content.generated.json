@@ -163,8 +163,46 @@
       ],
       "visionTitle": "希望成为 AI 进步的参与者。",
       "vision": "我对 AI 的兴趣始于好奇：它的能力边界在哪里，又会怎样改变我们的生活？我希望把这份好奇变成具体的贡献，哪怕只是让一次推理更高效、一个系统更可靠，或让一个工具更好用。期待在这个快速变化的时代，持续学习、亲手构建，也让 AI 更自然地走进真实生活。",
-      "source": "https://ywzhang1031.github.io/"
-    }
+      "source": "https://ywzhang1031.github.io/",
+      "mbtiImage": {
+        "src": "/images/intp-logician.svg",
+        "alt": "INTP 逻辑学家：戴紫色眼镜、手持药瓶的女性角色",
+        "source": "https://www.16personalities.com/intp-personality"
+      }
+    },
+    "resumePdf": "/files/yuewen-zhang-industry.pdf",
+    "socialLinks": [
+      {
+        "id": "github",
+        "label": "GitHub",
+        "url": "https://github.com/ywzhang1031"
+      },
+      {
+        "id": "scholar",
+        "label": "谷歌学术",
+        "url": "https://scholar.google.com/citations?user=YDjSimgAAAAJ"
+      },
+      {
+        "id": "xiaohongshu",
+        "label": "小红书",
+        "url": "https://www.xiaohongshu.com/user/profile/66729cac000000001b017208"
+      },
+      {
+        "id": "wechat",
+        "label": "微信",
+        "url": "/images/wechat-qr.jpg"
+      },
+      {
+        "id": "homepage",
+        "label": "个人主页",
+        "url": "https://ywzhang1031.github.io/"
+      },
+      {
+        "id": "email",
+        "label": "邮箱",
+        "url": "mailto:z15000675672@gmail.com"
+      }
+    ]
   },
   "tour": {
     "title": "从实时系统到 AI Infra",

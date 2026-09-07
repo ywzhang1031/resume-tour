@@ -5,7 +5,6 @@ import {
   ArrowLeft,
   ArrowRight,
   CodeXml,
-  Play,
   Sparkles,
   Maximize,
   Minimize,
@@ -16,7 +15,10 @@ import {
   Box,
   Layers,
   ExternalLink,
-  RotateCcw,
+  GraduationCap,
+  BookHeart,
+  MessageCircle,
+  Globe,
   Check,
   CircleDot,
   Music,
@@ -58,6 +60,36 @@ const initial: Location = {
   mode: 'tour',
 };
 const pad = (n: number) => String(n).padStart(2, '0');
+
+function SocialLinks() {
+  const icons = {
+    github: CodeXml,
+    scholar: GraduationCap,
+    xiaohongshu: BookHeart,
+    wechat: MessageCircle,
+    homepage: Globe,
+    email: Mail,
+  };
+  return (
+    <nav className="social-links" aria-label="个人主页与联系方式">
+      {profile.socialLinks.map((link) => {
+        const Icon = icons[link.id as keyof typeof icons] ?? ExternalLink;
+        return (
+          <a
+            key={link.id}
+            href={link.url}
+            target="_blank"
+            rel="noreferrer"
+            title={link.id === 'wechat' ? '打开微信二维码' : link.label}
+          >
+            <Icon size={17} aria-hidden="true" />
+            <span>{link.label}</span>
+          </a>
+        );
+      })}
+    </nav>
+  );
+}
 
 function ProjectLinks({ project }: { project: Project }) {
   return (
@@ -266,7 +298,7 @@ export default function ResumeTour() {
         await document.documentElement.requestFullscreen();
       else setNotice('当前浏览器不支持全屏，可以使用浏览器的全屏菜单。');
     } catch {
-      setNotice('暂时无法进入全屏，可以继续按章节介绍。');
+      setNotice('暂时无法进入全屏，可以继续浏览。');
     }
   };
   const relatedButtons = (ids: string[]) => (
@@ -299,9 +331,9 @@ export default function ResumeTour() {
         <span className="header-label">个人履历 / 2026</span>
         <div className="header-actions">
           <a
-            href="/resume"
+            href={profile.resumePdf}
             className="header-link"
-            aria-label="查看简历"
+            aria-label="查看 PDF 简历"
             target="_blank"
             rel="noreferrer"
           >
@@ -323,9 +355,9 @@ export default function ResumeTour() {
       </header>
       <SidebarProvider className="tour-layout">
         <Sidebar collapsible="none" className="chapter-sidebar">
-          <p className="eyebrow">THE INTERVIEW TOUR</p>
+          <p className="eyebrow">PROFILE & PROJECTS</p>
           <h2 className="nav-heading">从这里认识我</h2>
-          <nav aria-label="面试章节">
+          <nav aria-label="履历章节">
             {chapters.map((c, i) => (
               <button
                 key={c.id}
@@ -353,7 +385,7 @@ export default function ResumeTour() {
             <br />
             Coding Agent 为辅
             <div className="sidebar-line" />
-            <span>用工程实践，展开介绍。</span>
+            <span>持续探索，认真构建。</span>
           </div>
         </Sidebar>
         <main id="main-content" tabIndex={-1} ref={main} className="tour-main">
@@ -365,7 +397,7 @@ export default function ResumeTour() {
               }
             >
               <TabsList aria-label="浏览方式">
-                <TabsTrigger value="tour">面试导览</TabsTrigger>
+                <TabsTrigger value="tour">个人履历</TabsTrigger>
                 <TabsTrigger value="projects">
                   全部项目 <span className="count">{projects.length}</span>
                 </TabsTrigger>
@@ -420,7 +452,6 @@ export default function ResumeTour() {
                           ? 'WHAT’S NEXT'
                           : project?.category.toUpperCase()}
                 </span>
-                <span className="chapter-time">约 {chapter.duration}</span>
               </div>
               {chapter.kind === 'intro' && (
                 <>
@@ -450,14 +481,21 @@ export default function ResumeTour() {
                           className="primary-action"
                           onClick={() => move(1)}
                         >
-                          <Play size={15} />
-                          开始介绍
+                          了解我的经历
                           <ArrowRight size={18} />
                         </Button>
-                        <span>
-                          {chapters.length} 章 · {tour.duration}
-                        </span>
+                        <a
+                          className="intro-project-link"
+                          href="#mode=projects"
+                          onClick={(event) => {
+                            event.preventDefault();
+                            navigate({ mode: 'projects', project: null }, true);
+                          }}
+                        >
+                          浏览项目 <ArrowUpRight size={16} />
+                        </a>
                       </div>
+                      <SocialLinks />
                     </div>
                     <div className="portrait-stage">
                       <img
@@ -621,7 +659,7 @@ export default function ResumeTour() {
                     </Button>
                   </div>
                   <ProjectMilestones project={project} />
-                  <div className="step-tabs" aria-label="讲述步骤">
+                  <div className="step-tabs" aria-label="项目内容">
                     {project.steps.map((s, i) => (
                       <button
                         key={s.id}
@@ -698,12 +736,33 @@ export default function ResumeTour() {
               )}
               {chapter.kind === 'personal' && (
                 <section className="personal-section">
-                  <div className="section-intro">
-                    <span className="personality-tag">
-                      {profile.personal.mbti} · 好奇心驱动
-                    </span>
-                    <h1>{profile.personal.title}</h1>
-                    <p>{profile.personal.intro}</p>
+                  <div className="personal-heading">
+                    <div className="section-intro">
+                      <span className="personality-tag">
+                        {profile.personal.mbti} · 好奇心驱动
+                      </span>
+                      <h1>{profile.personal.title}</h1>
+                      <p>{profile.personal.intro}</p>
+                    </div>
+                    <figure className="mbti-figure">
+                      <img
+                        src={profile.personal.mbtiImage.src}
+                        alt={profile.personal.mbtiImage.alt}
+                        width={400}
+                        height={400}
+                        loading="lazy"
+                      />
+                      <figcaption>
+                        {profile.personal.mbti} · 逻辑学家
+                        <a
+                          href={profile.personal.mbtiImage.source}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          16Personalities <ArrowUpRight size={12} />
+                        </a>
+                      </figcaption>
+                    </figure>
                   </div>
                   <div className="interests-grid">
                     {profile.personal.interests.map((interest, index) => {
@@ -781,23 +840,23 @@ export default function ResumeTour() {
                       {profile.email}
                       <ArrowUpRight />
                     </a>
-                    <a href={profile.github} target="_blank" rel="noreferrer">
-                      <CodeXml />
-                      GitHub
-                      <ArrowUpRight size={16} />
-                    </a>
-                    <a href="/resume" target="_blank" rel="noreferrer">
+                    <a
+                      href={profile.resumePdf}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <FileText />
                       查看简历
                       <ArrowUpRight size={16} />
                     </a>
                   </div>
+                  <SocialLinks />
                   <Button
                     variant="outline"
                     onClick={() => navigate({ ...initial }, true)}
                   >
-                    <RotateCcw />
-                    重新开始介绍
+                    <ArrowLeft />
+                    返回首页
                   </Button>
                 </section>
               )}
@@ -823,7 +882,7 @@ export default function ResumeTour() {
                   <progress
                     max={totalSteps}
                     value={currentStep}
-                    aria-label="面试导览进度"
+                    aria-label="履历浏览进度"
                   />
                 </div>
                 <div className="footer-buttons">

@@ -11,12 +11,8 @@ export default function Resume() {
     <main className="print-resume">
       <div className="print-toolbar">
         <a href="/">← 返回交互履历</a>
-        <a
-          className="pdf-download"
-          href="/files/yuewen-zhang-resume.pdf"
-          download
-        >
-          下载精简简历 · PDF
+        <a className="pdf-download" href={profile.resumePdf} download>
+          下载简历 · PDF
         </a>
         <PrintButton />
       </div>

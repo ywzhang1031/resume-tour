@@ -213,10 +213,6 @@ button:disabled {
   justify-content: space-between;
   align-items: center;
 }
-.chapter-time {
-  font: 12px var(--font-mono);
-  color: #919c85;
-}
 .intro-stage {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
@@ -2390,5 +2386,77 @@ button:disabled {
   .contact-row .contact-email {
     flex-wrap: wrap;
     overflow-wrap: anywhere;
+  }
+}
+
+/* Public profile links wrap naturally on narrow screens. */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin: 25px 0;
+}
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  color: #b9c9ab;
+  font-size: 14px;
+}
+.social-links a:hover {
+  color: var(--primary);
+}
+.social-links svg {
+  flex-shrink: 0;
+}
+.intro-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  color: #b9c9ab;
+}
+
+.personal-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 30px;
+  align-items: center;
+}
+.mbti-figure {
+  margin: 0;
+  text-align: center;
+  padding: 12px;
+  background: #24212e;
+  border: 1px solid #53455f;
+  border-radius: 24px;
+}
+.mbti-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.mbti-figure figcaption {
+  color: #dbc9ed;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.mbti-figure a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  color: #b8a8c9;
+  font-size: 12px;
+}
+@media (max-width: 700px) {
+  .personal-heading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .mbti-figure {
+    width: 180px;
+    justify-self: start;
   }
 }

@@ -25,3 +25,12 @@ The technical scenes are original, code-generated data-flow diagrams built with 
 ## Resume
 
 `web/public/files/yuewen-zhang-resume.pdf` is generated from public site content, with the locally available STHeiti font embedded for Chinese text. Use your own content and appropriately licensed local font when regenerating it. The resume is intended for recruitment review, not identity reuse.
+
+## MBTI character and contact QR
+
+- `web/public/images/intp-logician.svg`: original female INTP / Logician avatar from [16Personalities](https://static.neris-assets.com/images/personality-types/avatars/intp-logician-s3-female.svg), sourced via its [official collection](https://static.neris-assets.com/images/personality-types/collection.html). Copyright belongs to NERIS / its licensors. This third-party illustration is **not covered by this repository's MIT license**; no free redistribution license is asserted. Template users should replace it or obtain appropriate permission; see [terms, section 6](https://www.16personalities.com/terms).
+- `web/public/images/wechat-qr.jpg`: author's contact QR copied unchanged from the personal homepage, at his request to reproduce its contact links. Replace this identity asset in a template fork.
+
+## Original recruitment PDF
+
+The active `profile.resumePdf` points to `web/public/files/yuewen-zhang-industry.pdf`, copied unchanged from the author's `Desktop/resume/Chinese_version/resume_llm_industry.pdf`. It is the existing Chinese industry resume, separate from the site-generated PDF. Updating website text does not rewrite this original document; replace the asset or change `resumePdf` when a new PDF is ready.

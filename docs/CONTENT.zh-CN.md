@@ -86,3 +86,10 @@ CI 执行相同核心检查。发布使用构建后的同一份代码。Sites �
 `node scripts/project-diagrams.mjs` 可重新生成本站八张原生架构/流程示意图；DALSCLIP 使用个人主页中的方法图。修改示意图时同步校对项目阶段和个人职责，避免把计划画成已经完成。
 
 章节的可选 `bridge` 是末尾的承接句，下一章名称自动跟随导览顺序。`kind: personal` 展示“代码之外”，无需关联项目。
+
+## 访客展示与联系入口
+
+- `profile.resumePdf`：顶部、联系区和打印页使用的 PDF 地址，文件放入 `web/public/files/`。目前使用 `resume` 文件夹内原有中文 AI 行业版，不随网站文案自动重生成。
+- `profile.socialLinks`：首页和联系区共用的社交链接。现有 GitHub、谷歌学术、小红书、微信二维码、个人主页及邮箱。微信二维码属于个人身份资产。
+- `profile.personal.mbtiImage`：INTP 角色的图片地址、替代文本与来源页；第三方版权见 `ASSETS.md`。
+- 章节 `duration` 保留为编辑数据，不在访客界面展示。首页与导航使用访客文案，保留原有方向键浏览、项目筛选与详情功能。
