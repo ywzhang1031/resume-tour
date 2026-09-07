@@ -44,9 +44,35 @@ test('new project needs no page or scene code', () => {
   const sample = structuredClone(data.projects[0]);
   sample.id = 'new-project';
   sample.scene = undefined;
+  delete sample.image;
   sample.order = 1000;
   data.projects.push(sample);
   assert.ok(publicContent(data).projects.some((p) => p.id === 'new-project'));
+});
+test('project images require local assets, descriptive text and valid dimensions', () => {
+  for (const patch of [
+    { src: '/images/projects/../../secret.svg' },
+    { src: 'https://example.com/tracker.svg' },
+    { src: '/images/projects/missing-figure.svg' },
+    { alt: '' },
+    { width: 0 },
+  ]) {
+    const data = loadContent();
+    Object.assign(data.projects[0].image, patch);
+    assert.throws(() => publicContent(data), /project image/);
+  }
+});
+test('personal chapter participates in navigation without project steps', () => {
+  const { tour, projects } = publicContent(loadContent());
+  const personal = tour.chapters.findIndex((c) => c.kind === 'personal');
+  assert.equal(
+    normalizeLocation('#chapter=beyond-code', tour.chapters, projects).chapter,
+    'beyond-code',
+  );
+  assert.deepEqual(movePosition(personal, 0, 1, tour.chapters, projects), [
+    personal + 1,
+    0,
+  ]);
 });
 test('unsafe evidence URLs and note traversal fail validation', () => {
   const data = loadContent();

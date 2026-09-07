@@ -6,7 +6,7 @@
     "email": "z15000675672@gmail.com",
     "github": "https://github.com/ywzhang1031",
     "intro": "从端侧高性能计算，走向大模型基础设施。\n主导实时 AI 系统从立项到上线，\n持续深入 LLM 推理、训练与 Agent Runtime。",
-    "portrait": "/images/yuewen-portrait.png",
+    "portrait": "/images/yuewen-photo.jpg",
     "updated": "2026-09-07",
     "stack": [
       {
@@ -139,7 +139,32 @@
           "nanochat-lab"
         ]
       }
-    ]
+    ],
+    "portraitAlt": "张跃文在湖边的生活照，来自个人主页",
+    "portraitWidth": 1440,
+    "portraitHeight": 960,
+    "personal": {
+      "title": "代码之外，\n也保持好奇。",
+      "intro": "喜欢在球场上投入，在音乐里放松，也喜欢探索没接触过的新事物。",
+      "mbti": "INTP",
+      "interests": [
+        {
+          "title": "篮球",
+          "detail": "左手投篮，喜欢库里。工作之外，常去球场找回专注与节奏。"
+        },
+        {
+          "title": "唱歌与音乐",
+          "detail": "喜欢唱歌、说唱和不同风格的音乐，也常听 Coldplay。"
+        },
+        {
+          "title": "探索新事物",
+          "detail": "好奇心驱动，喜欢追问原理，也愿意动手把一个新想法做出来。"
+        }
+      ],
+      "visionTitle": "希望成为 AI 进步的参与者。",
+      "vision": "我对 AI 的兴趣始于好奇：它的能力边界在哪里，又会怎样改变我们的生活？我希望把这份好奇变成具体的贡献，哪怕只是让一次推理更高效、一个系统更可靠，或让一个工具更好用。期待在这个快速变化的时代，持续学习、亲手构建，也让 AI 更自然地走进真实生活。",
+      "source": "https://ywzhang1031.github.io/"
+    }
   },
   "tour": {
     "title": "从实时系统到 AI Infra",
@@ -148,55 +173,70 @@
         "id": "intro",
         "title": "我是谁",
         "kind": "intro",
-        "duration": "45 秒"
+        "duration": "45 秒",
+        "bridge": "先从经历出发，看看这些技术兴趣是怎样形成的。"
       },
       {
         "id": "journey",
         "title": "经历与方向",
         "kind": "journey",
-        "duration": "45 秒"
+        "duration": "45 秒",
+        "bridge": "接下来，用一个实际交付的系统展开我的工程经历。"
       },
       {
         "id": "landing-protection",
         "project": "landing-protection",
         "title": "降落保护",
         "kind": "project",
-        "duration": "2 分 30 秒"
+        "duration": "2 分 30 秒",
+        "bridge": "实时感知关注判断延迟；同样的系统思路也用于持续流动的图像。"
       },
       {
         "id": "video-pipeline",
         "project": "video-pipeline",
         "title": "视频编码",
         "kind": "project",
-        "duration": "1 分钟"
+        "duration": "1 分钟",
+        "bridge": "从资源受限的端侧管线，延伸到大模型的调度、数据流与性能测量。"
       },
       {
         "id": "inference-lab",
         "project": "inference-lab",
         "title": "LLM Infra",
         "kind": "project",
-        "duration": "1 分 15 秒"
+        "duration": "1 分 15 秒",
+        "bridge": "理解模型的运行成本，也需要走进它的训练过程。"
       },
       {
         "id": "nanochat-lab",
         "project": "nanochat-lab",
         "title": "训练 / RL",
         "kind": "project",
-        "duration": "1 分钟"
+        "duration": "1 分钟",
+        "bridge": "除了模型本身，我也关注如何把它组织成可控、可用的工具。"
       },
       {
         "id": "my-agent",
         "project": "my-agent",
         "title": "Coding Agent",
         "kind": "project",
-        "duration": "45 秒"
+        "duration": "45 秒",
+        "bridge": "工程实践之外，模型表征与泛化问题也是我的研究起点。"
       },
       {
         "id": "dalsclip",
         "project": "dalsclip",
         "title": "研究经历",
         "kind": "project",
-        "duration": "30 秒"
+        "duration": "30 秒",
+        "bridge": "研究和工程之外，也想介绍一下我的兴趣与期待。"
+      },
+      {
+        "id": "beyond-code",
+        "title": "代码之外",
+        "kind": "personal",
+        "duration": "30 秒",
+        "bridge": "保持好奇，也希望把探索变成实际贡献。"
       },
       {
         "id": "next",
@@ -205,7 +245,7 @@
         "duration": "30 秒"
       }
     ],
-    "duration": "约 9 分钟"
+    "duration": "约 9 分 30 秒"
   },
   "projects": [
     {
@@ -313,6 +353,13 @@
         "使用地平线工具链完成模型量化与 BPU 部署，组织多传感器时间对齐、推理及后处理。",
         "以 epoch 处理跨模式过期结果；NV12 直输、异步 I/O 与门控优化，使指定工况单帧约 50–60 ms 降至 20 ms 以内。"
       ],
+      "image": {
+        "src": "/images/projects/landing-protection.svg",
+        "alt": "双目、深度、ToF 与导航数据汇入感知模块，输出降落保护状态",
+        "caption": "系统示意 · 多源输入、模型推理与飞控接口",
+        "width": 960,
+        "height": 540
+      },
       "markdown": "# 技术深挖：降落保护\n\n## 从立项到上线的研发责任\n\n担任项目研发负责人，从产品场景和安全需求拆解开始，负责架构设计、模块开发、模型量化与端侧部署、性能优化，并与飞控等团队完成状态接口对齐、联调和上线。感知侧输出状态与原因，飞控侧依据约定执行降落控制。\n\n## 模型量化与部署\n\n使用地平线工具链完成模型量化，负责将算法模型接入 BPU 推理链路，包括模型加载、输入输出组织、推理调用、后处理及场景验证。\n\n### 地平线 PTQ 工具链参考\n\n官方流程将模型检查、校准量化、编译和性能评估串联起来。`hb_mapper makertbin` 是量化与编译的转换工具；板端推理接口负责执行已转换的模型。\n\n以下为官方 ONNX 转换命令示例，具体项目脚本与参数以当时使用的 SDK 为准：\n\n```bash\nhb_mapper makertbin --model-type onnx --config config.yaml\n```\n\nYAML 配置涵盖 `model_parameters`、`input_parameters`、`calibration_parameters` 与 `compiler_parameters`。校准数据与模型预处理需一致；部署时还要核对 NV12 等运行时输入约定。检查转换后的精度表现与板端耗时，才能判断模型是否满足应用要求。\n\n参考：[X5 PTQ 官方流程](https://developer.d-robotics.cc/rdk_x_doc/en/Advanced_development/toolchain_development/intermediate/ptq_process)、[地平线 YAML 配置说明](https://developer.horizon.auto/blog/10375)。\n\n## 100 ms 与实时预算\n\n100 ms 是多传感器帧配对的容差。它取决于传感器延迟分布、匹配成功率和飞机运动速度。它不能替代时间戳基准的统一，也不代表从输入到飞控的端到端延迟。\n\n## epoch 如何防止旧结果\n\n1. 本轮处理开始时记录版本，例如 `epoch = 7`。\n2. 用户取消降落，重置状态，版本推进至 `8`。\n3. 旧帧算法返回后发现 `7 != 8`，丢弃结果。\n\n共享缓冲区仍通过 mutex 保护，频繁读取的标志通过 atomic 管理。版本校验与结果发布之间的并发边界同样需要受控；这不是整个系统无锁的保证。\n\n## 实时优化\n\n直接使用 NV12 模型输入，减少颜色空间转换；将图像保存移出主回调；用飞行模式、高度与动态频率门控减少不必要推理。使用分段计时区分 buffer 操作、算法与其他耗时。\n\n## 场景展示\n\n导览中的 8 秒动画是对降落保护决策流程的示意，不是实飞录像。官方手册的 Landing Protection 章节说明了检测到不适宜地面或水面后暂停降落、悬停并等待用户输入的产品行为。实际可用性取决于环境与飞行状态。\n",
       "relatedProjects": []
     },
@@ -398,6 +445,13 @@
         "封装 H.265 输入 / 输出队列与 RAII 资源管理，按需初始化通道，减少常驻资源开销。",
         "实现 5 分钟循环录制、最多 3 个事故片段保护与动态预览切换，支持飞行回放和现场调试。"
       ],
+      "image": {
+        "src": "/images/projects/video-pipeline.svg",
+        "alt": "多类图像按需接入硬件编码，输出循环录制与实时码流",
+        "caption": "架构示意 · 按需通道、H.265 与双路输出",
+        "width": 960,
+        "height": 540
+      },
       "markdown": "# 技术深挖：编码与生命周期\n\n## 一次编码调用\n\n从硬件队列取输入缓冲区，填充并提交图像；取出编码输出，交给存储或发布链路，然后归还输出缓冲区。异常路径也必须归还已获取资源。\n\n## 为什么按需创建\n\n不同传感器组合并不总是同时使用。将配置与通道实例关联，配合运行模式和预览指令管理生命周期，控制资源占用。\n\n## 循环录制与事故保护\n\n默认五个时间片构成五分钟窗口。覆盖最旧的未保护片段；碰撞事件将相关片段置为受保护，最多保护三片。此机制解决逻辑覆盖问题，断电一致性需要额外的文件系统与持久化设计。\n",
       "relatedProjects": []
     },
@@ -485,6 +539,13 @@
       "boundary": "当前环境：Apple Silicon；重点验证协议与指标。公开版为闭环基线，Open-loop 与 HTTP 链路正在迭代。",
       "scene": "pipeline",
       "note": "inference-lab.md",
+      "image": {
+        "src": "/images/projects/inference-lab.svg",
+        "alt": "LLM 请求从计划到达到完成的时间线，以及 TTFT、TPOT 和 E2E 指标",
+        "caption": "测量示意 · 时间边界与流式输出，不是实测性能曲线",
+        "width": 960,
+        "height": 540
+      },
       "markdown": "# 测量边界\n\n## 已完成与正在做\n\n公开仓库提供闭环测量基线。工作区正在推进 open-loop、HTTP 流式客户端及时间字段一致性；公开版本与本地进度可能不同。\n\n## 为什么不是数 SSE 分片\n\n网络分片和流式事件可以合并或拆分模型输出。事件数量不等于生成 token 数，需要使用服务端 usage 或有明确语义的计数来源。\n\n## 下一步\n\n完善调度滞后与错误路径的验证，再在受控 NVIDIA 环境开展性能实验，固定模型、硬件、软件版本、请求分布与推理参数。\n",
       "relatedProjects": []
     },
@@ -590,6 +651,13 @@
         "完成 d6 / d12 预训练 checkpoint，各 5,000 步、约 81.92M 训练 tokens，记录序列长度与有效 batch。",
         "后续管线：SFT → RL / GRPO → Evaluation，按阶段补充实验与结果。"
       ],
+      "image": {
+        "src": "/images/projects/nanochat-lab.svg",
+        "alt": "预训练到 SFT、RL 和评测的分阶段训练路线",
+        "caption": "训练路线 · 预训练阶段实验已完成，后续阶段为计划实践",
+        "width": 960,
+        "height": 540
+      },
       "relatedProjects": []
     },
     {
@@ -654,7 +722,14 @@
       "relatedProjects": [
         "dsh-aside",
         "trajectory-vault"
-      ]
+      ],
+      "image": {
+        "src": "/images/projects/my-agent.svg",
+        "alt": "模型、运行时、权限工具与事件记录构成可控执行循环",
+        "caption": "运行时示意 · 控制流、工具边界与执行记录",
+        "width": 960,
+        "height": 540
+      }
     },
     {
       "id": "dsh-aside",
@@ -703,6 +778,13 @@
       ],
       "boundary": "v0.1.0 已发布；宿主兼容范围与安装步骤以仓库说明为准。",
       "scene": "pipeline",
+      "image": {
+        "src": "/images/projects/dsh-aside.svg",
+        "alt": "主对话中的选区连接独立只读旁注，主线与追问并排呈现",
+        "caption": "交互示意 · 选区锚定与独立旁注，不是产品截图",
+        "width": 960,
+        "height": 540
+      },
       "relatedProjects": []
     },
     {
@@ -747,6 +829,13 @@
       ],
       "boundary": "性能结论应对应论文中的数据集、基线和评价协议。",
       "scene": "pipeline",
+      "image": {
+        "src": "/images/projects/dalsclip.png",
+        "alt": "DALSCLIP 方法图：跨域图像和文本表征、提示映射与域不变学习",
+        "caption": "论文方法图 · 来自我的个人主页",
+        "width": 1245,
+        "height": 680
+      },
       "relatedProjects": []
     },
     {
@@ -792,6 +881,13 @@
       ],
       "boundary": "当前阶段：轨迹数据基础设施与分析视图；后续用于评估与训练数据研究。",
       "scene": "pipeline",
+      "image": {
+        "src": "/images/projects/trajectory-vault.svg",
+        "alt": "多源 Agent 轨迹经过脱敏与规范化形成统一结构和分析视图",
+        "caption": "数据流示意 · 从原始轨迹到可检查的分析数据",
+        "width": 960,
+        "height": 540
+      },
       "relatedProjects": []
     },
     {
@@ -835,6 +931,13 @@
       ],
       "boundary": "个人项目：Swift 原生应用与多设备提醒体验。",
       "scene": "pipeline",
+      "image": {
+        "src": "/images/projects/eyecare.svg",
+        "alt": "20 分钟工作、20 秒休息和进入下一轮的提醒节奏",
+        "caption": "功能示意 · iOS / watchOS 护眼提醒",
+        "width": 960,
+        "height": 540
+      },
       "relatedProjects": []
     }
   ],

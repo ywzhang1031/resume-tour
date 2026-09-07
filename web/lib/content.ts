@@ -32,13 +32,21 @@ export type Project = {
     detail: string;
   }[];
   metric?: { value: string; label: string; detail: string };
+  image?: {
+    src: string;
+    alt: string;
+    caption: string;
+    width: number;
+    height: number;
+  };
 };
 export type Chapter = {
   id: string;
   title: string;
-  kind: 'intro' | 'journey' | 'project' | 'closing';
+  kind: 'intro' | 'journey' | 'project' | 'personal' | 'closing';
   project?: string;
   duration: string;
+  bridge?: string;
 };
 export const content = generated as Omit<
   typeof generated,

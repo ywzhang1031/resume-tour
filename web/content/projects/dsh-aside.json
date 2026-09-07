@@ -33,5 +33,12 @@
     }
   ],
   "boundary": "v0.1.0 已发布；宿主兼容范围与安装步骤以仓库说明为准。",
-  "scene": "pipeline"
+  "scene": "pipeline",
+  "image": {
+    "src": "/images/projects/dsh-aside.svg",
+    "alt": "主对话中的选区连接独立只读旁注，主线与追问并排呈现",
+    "caption": "交互示意 · 选区锚定与独立旁注，不是产品截图",
+    "width": 960,
+    "height": 540
+  }
 }

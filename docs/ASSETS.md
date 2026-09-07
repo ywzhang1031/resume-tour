@@ -4,15 +4,17 @@ Code and original project documentation use the root MIT license. Yuewen Zhang's
 
 ## Portrait
 
-- Repository asset: `web/public/images/yuewen-portrait.png`
-- Created with OpenAI image generation using an owner-supplied identity reference.
-- A stylized raster portrait, not a rotatable 3D model or a factual photograph.
-- The original reference photo is not included in this repository.
-- The generated asset is used only to represent Yuewen Zhang. No separate permission to impersonate or reuse his likeness is provided.
+- Repository asset: `web/public/images/yuewen-photo.jpg`.
+- The author's real photograph, reused at his explicit request from [his personal homepage](https://ywzhang1031.github.io/assets/img/photo.jpg).
+- Copied unchanged from the homepage source repository. Only the page's CSS framing changes; no face generation or retouching is applied.
+- This replaces the earlier generated portrait. The photo represents Yuewen Zhang and is not a reusable template identity.
 
-Generation brief:
+## Project figures
 
-> Create one sophisticated editorial 3D portrait bust of the young Chinese man in the supplied identity reference. Preserve recognisable facial proportions, centre-parted dark hair, brown eyes, clean-shaven face and no glasses. Calm expression and subtle smile; charcoal crew-neck overshirt. Refined matte clay/resin surfaces, natural proportions, delicately sculpted hair. Vertical 4:5 composition with head and shoulders, comfortable space above. Dark charcoal background #111310, soft frontal light and a subtle lime rim light. No typography, props, logos, watermark, frame or pedestal.
+- Eight original explanatory SVG diagrams live in `web/public/images/projects/` and can be regenerated with `node web/scripts/project-diagrams.mjs`.
+- They illustrate project architecture, interfaces, measurement boundaries and training stages. They are not product screenshots, measured benchmark plots or records of completed future work.
+- `dalsclip.png` is the author's method figure, reused from [his homepage](https://ywzhang1031.github.io/assets/img/publication_preview/dalsclip.png). The diagram remains unchanged; see the linked paper for the complete method and experimental claims.
+- Project captions and alternative text are maintained in each project JSON file. Assets are local and need no third-party image host to render.
 
 The technical scenes are original, code-generated data-flow diagrams built with Three.js. Interface icons use Lucide. System fonts are resolved locally. No intro3d models, images or source code were copied.
 

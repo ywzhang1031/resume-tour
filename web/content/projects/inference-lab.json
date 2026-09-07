@@ -66,5 +66,12 @@
   ],
   "boundary": "当前环境：Apple Silicon；重点验证协议与指标。公开版为闭环基线，Open-loop 与 HTTP 链路正在迭代。",
   "scene": "pipeline",
-  "note": "inference-lab.md"
+  "note": "inference-lab.md",
+  "image": {
+    "src": "/images/projects/inference-lab.svg",
+    "alt": "LLM 请求从计划到达到完成的时间线，以及 TTFT、TPOT 和 E2E 指标",
+    "caption": "测量示意 · 时间边界与流式输出，不是实测性能曲线",
+    "width": 960,
+    "height": 540
+  }
 }

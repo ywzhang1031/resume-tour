@@ -5,55 +5,70 @@
       "id": "intro",
       "title": "我是谁",
       "kind": "intro",
-      "duration": "45 秒"
+      "duration": "45 秒",
+      "bridge": "先从经历出发，看看这些技术兴趣是怎样形成的。"
     },
     {
       "id": "journey",
       "title": "经历与方向",
       "kind": "journey",
-      "duration": "45 秒"
+      "duration": "45 秒",
+      "bridge": "接下来，用一个实际交付的系统展开我的工程经历。"
     },
     {
       "id": "landing-protection",
       "project": "landing-protection",
       "title": "降落保护",
       "kind": "project",
-      "duration": "2 分 30 秒"
+      "duration": "2 分 30 秒",
+      "bridge": "实时感知关注判断延迟；同样的系统思路也用于持续流动的图像。"
     },
     {
       "id": "video-pipeline",
       "project": "video-pipeline",
       "title": "视频编码",
       "kind": "project",
-      "duration": "1 分钟"
+      "duration": "1 分钟",
+      "bridge": "从资源受限的端侧管线，延伸到大模型的调度、数据流与性能测量。"
     },
     {
       "id": "inference-lab",
       "project": "inference-lab",
       "title": "LLM Infra",
       "kind": "project",
-      "duration": "1 分 15 秒"
+      "duration": "1 分 15 秒",
+      "bridge": "理解模型的运行成本，也需要走进它的训练过程。"
     },
     {
       "id": "nanochat-lab",
       "project": "nanochat-lab",
       "title": "训练 / RL",
       "kind": "project",
-      "duration": "1 分钟"
+      "duration": "1 分钟",
+      "bridge": "除了模型本身，我也关注如何把它组织成可控、可用的工具。"
     },
     {
       "id": "my-agent",
       "project": "my-agent",
       "title": "Coding Agent",
       "kind": "project",
-      "duration": "45 秒"
+      "duration": "45 秒",
+      "bridge": "工程实践之外，模型表征与泛化问题也是我的研究起点。"
     },
     {
       "id": "dalsclip",
       "project": "dalsclip",
       "title": "研究经历",
       "kind": "project",
-      "duration": "30 秒"
+      "duration": "30 秒",
+      "bridge": "研究和工程之外，也想介绍一下我的兴趣与期待。"
+    },
+    {
+      "id": "beyond-code",
+      "title": "代码之外",
+      "kind": "personal",
+      "duration": "30 秒",
+      "bridge": "保持好奇，也希望把探索变成实际贡献。"
     },
     {
       "id": "next",
@@ -62,5 +77,5 @@
       "duration": "30 秒"
     }
   ],
-  "duration": "约 9 分钟"
+  "duration": "约 9 分 30 秒"
 }

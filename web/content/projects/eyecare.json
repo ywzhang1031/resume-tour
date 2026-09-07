@@ -14,11 +14,7 @@
       "id": "step-1",
       "title": "从日常问题到小型产品",
       "body": "以简单提醒交互为核心，实践移动端应用组织与多设备体验。",
-      "points": [
-        "Swift 原生应用",
-        "iOS / watchOS 交互",
-        "提醒节奏与日常使用场景"
-      ],
+      "points": ["Swift 原生应用", "iOS / watchOS 交互", "提醒节奏与日常使用场景"],
       "flow": ["工作时段", "计时", "休息提醒", "下一轮"]
     }
   ],
@@ -29,5 +25,12 @@
     }
   ],
   "boundary": "个人项目：Swift 原生应用与多设备提醒体验。",
-  "scene": "pipeline"
+  "scene": "pipeline",
+  "image": {
+    "src": "/images/projects/eyecare.svg",
+    "alt": "20 分钟工作、20 秒休息和进入下一轮的提醒节奏",
+    "caption": "功能示意 · iOS / watchOS 护眼提醒",
+    "width": 960,
+    "height": 540
+  }
 }

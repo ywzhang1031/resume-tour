@@ -48,12 +48,7 @@
         "RL / GRPO：计划实践 rollout、奖励、组内优势与策略更新",
         "Evaluation：计划比较各阶段输出、任务效果与训练成本"
       ],
-      "flow": [
-        "Pretraining · 已完成",
-        "SFT · 计划",
-        "RL / GRPO · 计划",
-        "Evaluation · 计划"
-      ]
+      "flow": ["Pretraining · 已完成", "SFT · 计划", "RL / GRPO · 计划", "Evaluation · 计划"]
     }
   ],
   "links": [
@@ -89,5 +84,12 @@
   "resumeHighlights": [
     "完成 d6 / d12 预训练 checkpoint，各 5,000 步、约 81.92M 训练 tokens，记录序列长度与有效 batch。",
     "后续管线：SFT → RL / GRPO → Evaluation，按阶段补充实验与结果。"
-  ]
+  ],
+  "image": {
+    "src": "/images/projects/nanochat-lab.svg",
+    "alt": "预训练到 SFT、RL 和评测的分阶段训练路线",
+    "caption": "训练路线 · 预训练阶段实验已完成，后续阶段为计划实践",
+    "width": 960,
+    "height": 540
+  }
 }

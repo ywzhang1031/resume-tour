@@ -29,5 +29,12 @@
     }
   ],
   "boundary": "性能结论应对应论文中的数据集、基线和评价协议。",
-  "scene": "pipeline"
+  "scene": "pipeline",
+  "image": {
+    "src": "/images/projects/dalsclip.png",
+    "alt": "DALSCLIP 方法图：跨域图像和文本表征、提示映射与域不变学习",
+    "caption": "论文方法图 · 来自我的个人主页",
+    "width": 1245,
+    "height": 680
+  }
 }

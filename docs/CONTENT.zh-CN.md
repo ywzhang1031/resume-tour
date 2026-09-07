@@ -4,7 +4,7 @@
 
 ## 文件与更新
 
-- `content/profile.json`：身份、邮箱、肖像路径、技术栈、经历。`introTags` 控制首页标签；`resumeSummary` 统一网页与 PDF 简介；`focus` 展示模型研究、在研与下一阶段方向。
+- `content/profile.json`：身份、邮箱、肖像路径、技术栈、经历。`introTags` 控制首页标签；`resumeSummary` 统一网页与 PDF 简介；`focus` 展示模型研究、在研与下一阶段方向；`personal` 管理爱好、MBTI、AI 愿景与主页链接。
 - `content/projects/*.json`：一个文件对应一个项目。
 - `content/notes/*.md`：长篇技术说明，通过项目的 `note` 文件名关联。
 - `content/tour.json`：章节顺序与稳定项目引用。
@@ -78,3 +78,11 @@ npm run build
 ```
 
 CI 执行相同核心检查。发布使用构建后的同一份代码。Sites 访问权限独立于 GitHub：公开源代码不表示部署网址也已公开。
+
+## 项目图与章节衔接
+
+项目的可选 `image` 包含 `src`、`alt`、`caption`、`width`、`height`。图片放在 `public/images/projects/`，支持 SVG / PNG / JPG / WebP；路径、说明、尺寸和文件存在性均经过校验。列表显示预览，详情提供大图链接，导览的第一步展示概览图。没有图片的新项目仍可使用默认数据流场景。
+
+`node scripts/project-diagrams.mjs` 可重新生成本站八张原生架构/流程示意图；DALSCLIP 使用个人主页中的方法图。修改示意图时同步校对项目阶段和个人职责，避免把计划画成已经完成。
+
+章节的可选 `bridge` 是末尾的承接句，下一章名称自动跟随导览顺序。`kind: personal` 展示“代码之外”，无需关联项目。

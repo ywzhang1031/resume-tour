@@ -99,6 +99,25 @@ export function validateContent(data) {
         /^[a-z0-9-]+\.md$/.test(project.note),
         `${project.id}: invalid note path`,
       );
+    if (project.image) {
+      const picture = project.image;
+      requireValue(
+        /^\/images\/projects\/[a-z0-9-]+\.(svg|png|jpg|webp)$/.test(
+          picture.src,
+        ) &&
+          picture.alt?.trim() &&
+          picture.caption?.trim() &&
+          Number.isFinite(picture.width) &&
+          picture.width > 0 &&
+          Number.isFinite(picture.height) &&
+          picture.height > 0,
+        `${project.id}: invalid project image`,
+      );
+      requireValue(
+        existsSync(resolve(root, 'public' + picture.src)),
+        `${project.id}: missing project image`,
+      );
+    }
   }
   const chapters = new Set();
   for (const project of data.projects) {
@@ -112,7 +131,9 @@ export function validateContent(data) {
     );
     chapters.add(chapter.id);
     requireValue(
-      ['intro', 'journey', 'project', 'closing'].includes(chapter.kind),
+      ['intro', 'journey', 'project', 'personal', 'closing'].includes(
+        chapter.kind,
+      ),
       `${chapter.id}: invalid chapter kind`,
     );
     if (chapter.kind === 'project')

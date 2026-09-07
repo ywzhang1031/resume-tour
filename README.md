@@ -15,7 +15,7 @@ An open-source personal website for presenting experience, projects and technica
 - A printable resume and a concise, downloadable two-page PDF.
 - File-based content, stable IDs, reference validation, ordering and visibility controls.
 
-The current content is Yuewen Zhang's AI Infra / Coding Agent portfolio. The site is implemented with React, TypeScript, Vinext, shadcn/Base UI and Three.js. Its stylized portrait is a raster image; the technical data-flow scenes use WebGL.
+The current content is Yuewen Zhang's AI Infra / Coding Agent portfolio. The site is implemented with React, TypeScript, Vinext, shadcn/Base UI and Three.js. The author’s real photo and project figures are local assets; detailed data-flow scenes use WebGL. A personal chapter introduces interests and the motivation behind the work.
 
 ## Run locally
 

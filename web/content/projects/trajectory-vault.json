@@ -29,5 +29,12 @@
     }
   ],
   "boundary": "当前阶段：轨迹数据基础设施与分析视图；后续用于评估与训练数据研究。",
-  "scene": "pipeline"
+  "scene": "pipeline",
+  "image": {
+    "src": "/images/projects/trajectory-vault.svg",
+    "alt": "多源 Agent 轨迹经过脱敏与规范化形成统一结构和分析视图",
+    "caption": "数据流示意 · 从原始轨迹到可检查的分析数据",
+    "width": 960,
+    "height": 540
+  }
 }

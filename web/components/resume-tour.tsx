@@ -18,6 +18,9 @@ import {
   ExternalLink,
   RotateCcw,
   Check,
+  CircleDot,
+  Music,
+  Compass,
 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import { Button } from '@/components/ui/button';
@@ -66,6 +69,33 @@ function ProjectLinks({ project }: { project: Project }) {
         </a>
       ))}
     </div>
+  );
+}
+
+function ProjectFigure({ project }: { project: Project }) {
+  const picture = project.image;
+  if (!picture) return null;
+  return (
+    <figure className="project-figure">
+      <a
+        href={picture.src}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`${project.title}：查看原图`}
+      >
+        <img
+          src={picture.src}
+          alt={picture.alt}
+          width={picture.width}
+          height={picture.height}
+          loading="lazy"
+        />
+        <span className="figure-expand">
+          <Maximize size={14} /> 查看大图
+        </span>
+      </a>
+      <figcaption>{picture.caption}</figcaption>
+    </figure>
   );
 }
 
@@ -384,9 +414,11 @@ export default function ResumeTour() {
                     ? 'INTRODUCTION'
                     : chapter.kind === 'journey'
                       ? 'EXPERIENCE'
-                      : chapter.kind === 'closing'
-                        ? 'WHAT’S NEXT'
-                        : project?.category.toUpperCase()}
+                      : chapter.kind === 'personal'
+                        ? 'BEYOND CODE'
+                        : chapter.kind === 'closing'
+                          ? 'WHAT’S NEXT'
+                          : project?.category.toUpperCase()}
                 </span>
                 <span className="chapter-time">约 {chapter.duration}</span>
               </div>
@@ -430,18 +462,19 @@ export default function ResumeTour() {
                     <div className="portrait-stage">
                       <img
                         src={profile.portrait}
-                        alt="张跃文的风格化个人形象"
+                        alt={profile.portraitAlt}
                         className="portrait-image"
                         fetchPriority="high"
-                        width="1122"
-                        height="1402"
+                        width={profile.portraitWidth}
+                        height={profile.portraitHeight}
                       />
                       <div className="portrait-caption">
                         <span className="portrait-caption-icon">
                           <Sparkles size={17} />
                         </span>
                         <span>
-                          从真实系统出发<small>BUILDING WITH CURIOSITY</small>
+                          保持好奇，认真构建
+                          <small>BUILDING WITH CURIOSITY</small>
                         </span>
                         <span className="portrait-cross">+</span>
                       </div>
@@ -501,6 +534,31 @@ export default function ResumeTour() {
                         </article>
                       ))}
                     </div>
+                  </section>
+                  <section
+                    className="personal-teaser"
+                    aria-label="工作之外的我"
+                  >
+                    <div>
+                      <span className="eyebrow">BEYOND CODE</span>
+                      <p>
+                        篮球、唱歌、探索新事物。
+                        <span className="personality-tag">
+                          {profile.personal.mbti}
+                        </span>
+                      </p>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      onClick={() =>
+                        navigate(
+                          { chapter: 'beyond-code', step: 0, project: null },
+                          true,
+                        )
+                      }
+                    >
+                      认识工作之外的我 <ArrowRight size={16} />
+                    </Button>
                   </section>
                 </>
               )}
@@ -597,6 +655,8 @@ export default function ResumeTour() {
                     <div className="case-visual">
                       {step.illustration === 'landing-safety' ? (
                         <LandingDemo animate={motion && !reduced} />
+                      ) : location.step === 0 && project.image ? (
+                        <ProjectFigure project={project} />
                       ) : (
                         <SystemScene
                           flow={step.flow}
@@ -634,6 +694,42 @@ export default function ResumeTour() {
                       {relatedButtons(project.relatedProjects ?? [])}
                     </div>
                   )}
+                </section>
+              )}
+              {chapter.kind === 'personal' && (
+                <section className="personal-section">
+                  <div className="section-intro">
+                    <span className="personality-tag">
+                      {profile.personal.mbti} · 好奇心驱动
+                    </span>
+                    <h1>{profile.personal.title}</h1>
+                    <p>{profile.personal.intro}</p>
+                  </div>
+                  <div className="interests-grid">
+                    {profile.personal.interests.map((interest, index) => {
+                      const Icon =
+                        [CircleDot, Music, Compass][index] ?? Compass;
+                      return (
+                        <article key={interest.title}>
+                          <Icon size={26} />
+                          <h2>{interest.title}</h2>
+                          <p>{interest.detail}</p>
+                        </article>
+                      );
+                    })}
+                  </div>
+                  <div className="vision-panel">
+                    <p className="eyebrow">WHY I BUILD</p>
+                    <h2>{profile.personal.visionTitle}</h2>
+                    <p>{profile.personal.vision}</p>
+                    <a
+                      href={profile.personal.source}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      我的个人主页 <ArrowUpRight size={16} />
+                    </a>
+                  </div>
                 </section>
               )}
               {chapter.kind === 'closing' && (
@@ -704,6 +800,17 @@ export default function ResumeTour() {
                     重新开始介绍
                   </Button>
                 </section>
+              )}
+              {!last && location.step === stepsCount - 1 && chapter.bridge && (
+                <aside className="chapter-bridge">
+                  <div>
+                    <span className="eyebrow">
+                      接下来 · {chapters[chapterIndex + 1]?.title}
+                    </span>
+                    <p>{chapter.bridge}</p>
+                  </div>
+                  <ArrowRight size={22} aria-hidden="true" />
+                </aside>
               )}
               <footer className="tour-footer">
                 <div className="tour-progress">
@@ -798,13 +905,29 @@ export default function ResumeTour() {
                 找到 {filtered.length} 个项目
               </p>
               <div className="project-grid">
-                {filtered.map((p, index) => (
+                {filtered.map((p) => (
                   <article className="project-card" key={p.id}>
                     <div className="project-card-top">
                       <span>{p.category}</span>
                       <span>{p.status}</span>
                     </div>
-                    <span className="project-card-index">{pad(index + 1)}</span>
+                    {p.image && (
+                      <button
+                        className="project-thumbnail"
+                        aria-label={`查看 ${p.title} 的项目图与详情`}
+                        onClick={(event) =>
+                          openProject(p.id, event.currentTarget)
+                        }
+                      >
+                        <img
+                          src={p.image.src}
+                          alt={p.image.alt}
+                          width={p.image.width}
+                          height={p.image.height}
+                          loading="lazy"
+                        />
+                      </button>
+                    )}
                     <h2>
                       <button
                         onClick={(event) =>
@@ -897,6 +1020,7 @@ export default function ResumeTour() {
                 </Button>
               </SheetHeader>
               <div className="detail-body">
+                <ProjectFigure project={selected} />
                 <p className="ownership">
                   <span>我的职责</span>
                   {selected.role}
