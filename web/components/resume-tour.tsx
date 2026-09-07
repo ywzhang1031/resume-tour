@@ -5,7 +5,6 @@ import {
   ArrowLeft,
   ArrowRight,
   CodeXml,
-  Sparkles,
   Maximize,
   Minimize,
   Mail,
@@ -381,9 +380,9 @@ export default function ResumeTour() {
             ))}
           </nav>
           <div className="sidebar-bottom">
-            <span className="live-dot" /> AI Infra 为主
+            <span className="live-dot" /> AI Systems · Infrastructure
             <br />
-            Coding Agent 为辅
+            Coding Agents
             <div className="sidebar-line" />
             <span>持续探索，认真构建。</span>
           </div>
@@ -457,9 +456,6 @@ export default function ResumeTour() {
                 <>
                   <section className="intro-stage">
                     <div className="intro-copy">
-                      <div className="availability">
-                        <span className="live-dot" /> 寻找 AI Infra 方向的新机会
-                      </div>
                       <h1>
                         你好，我是
                         <span className="name-line">
@@ -506,16 +502,9 @@ export default function ResumeTour() {
                         width={profile.portraitWidth}
                         height={profile.portraitHeight}
                       />
-                      <div className="portrait-caption">
-                        <span className="portrait-caption-icon">
-                          <Sparkles size={17} />
-                        </span>
-                        <span>
-                          保持好奇，认真构建
-                          <small>BUILDING WITH CURIOSITY</small>
-                        </span>
-                        <span className="portrait-cross">+</span>
-                      </div>
+                      <p className="portrait-motto">
+                        {profile.portraitCaption}
+                      </p>
                     </div>
                   </section>
                   <section
@@ -793,18 +782,15 @@ export default function ResumeTour() {
               )}
               {chapter.kind === 'closing' && (
                 <section className="closing-section">
-                  <span className="availability">
-                    <span className="live-dot" /> OPEN TO WORK
-                  </span>
                   <h1>
-                    下一站，
+                    一起构建，
                     <br />
-                    <em>AI Infrastructure.</em>
+                    <em>更多可能。</em>
                   </h1>
                   <p className="closing-lead">
                     把真实系统里积累的性能意识、并发经验和交付能力，
                     <br />
-                    带到大模型的推理与运行基础设施。
+                    带到 AI 系统、模型服务与开发者工具。
                   </p>
                   <div className="fit-grid">
                     <article>

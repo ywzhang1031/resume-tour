@@ -33,4 +33,4 @@ The technical scenes are original, code-generated data-flow diagrams built with 
 
 ## Original recruitment PDF
 
-The active `profile.resumePdf` points to `web/public/files/yuewen-zhang-industry.pdf`, copied unchanged from the author's `Desktop/resume/Chinese_version/resume_llm_industry.pdf`. It is the existing Chinese industry resume, separate from the site-generated PDF. Updating website text does not rewrite this original document; replace the asset or change `resumePdf` when a new PDF is ready.
+The active `profile.resumePdf` points to `web/public/files/yuewen-zhang-ai-agent.pdf`, copied unchanged from the author's explicitly selected `Desktop/resume/Chinese_version/resume_ai_agent.pdf`. It is the existing Chinese AI Agent resume, separate from the site-generated PDF. Updating website text does not rewrite this original document; replace the asset or change `resumePdf` when a new PDF is ready.

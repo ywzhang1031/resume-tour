@@ -3,9 +3,9 @@ import './globals.css';
 
 export const metadata: Metadata = {
   icons: { icon: '/favicon.svg' },
-  title: '张跃文 Yuewen Zhang · AI Infra',
+  title: '张跃文 Yuewen Zhang · Systems & AI',
   description:
-    '从端侧实时系统到 LLM Infra。张跃文的工程项目、研究与交互式面试履历。',
+    '张跃文的个人履历：高性能系统、模型训练与推理、Coding Agent，以及研究与生活。',
 };
 
 export default function RootLayout({

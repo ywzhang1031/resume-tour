@@ -2,7 +2,7 @@
   "profile": {
     "name": "张跃文",
     "englishName": "Yuewen Zhang",
-    "role": "AI Infra Engineer · C++ / LLM Systems",
+    "role": "Systems & AI Engineer · C++ / Python",
     "email": "z15000675672@gmail.com",
     "github": "https://github.com/ywzhang1031",
     "intro": "从端侧高性能计算，走向大模型基础设施。\n主导实时 AI 系统从立项到上线，\n持续深入 LLM 推理、训练与 Agent Runtime。",
@@ -34,6 +34,7 @@
         "tags": [
           "地平线模型量化",
           "Horizon X5M / BPU",
+          "NVIDIA Orin / 嵌入式 Linux",
           "模型 Runtime / Tensor I/O",
           "NV12 / OpenCV",
           "H.265 硬件卸载"
@@ -44,20 +45,53 @@
         ]
       },
       {
-        "id": "llm",
-        "title": "LLM 推理与训练",
-        "level": "项目实践",
-        "summary": "服务测量、负载调度与训练链路",
+        "id": "engineering",
+        "title": "工程协作与交付",
+        "level": "工作交付",
+        "summary": "版本管理、代码评审与持续集成",
         "tags": [
-          "Python / PyTorch",
-          "HTTP / SSE Streaming",
-          "TTFT / TPOT / E2E",
-          "Open-loop / Closed-loop",
-          "Pretraining / MPS"
+          "Git / Gerrit",
+          "Docker / 容器环境",
+          "CI/CD 管线",
+          "代码评审 / 分支协作",
+          "跨团队联调与上线"
         ],
         "projects": [
-          "inference-lab",
-          "nanochat-lab"
+          "landing-protection",
+          "video-pipeline"
+        ]
+      },
+      {
+        "id": "llm",
+        "title": "LLM 推理与性能测量",
+        "level": "项目实践",
+        "summary": "流式服务、负载调度与延迟分析",
+        "tags": [
+          "Python / HTTP / SSE",
+          "TTFT / TPOT / E2E",
+          "Open-loop / Closed-loop",
+          "并发请求 / 连接复用",
+          "可复现负载与原始记录"
+        ],
+        "projects": [
+          "inference-lab"
+        ]
+      },
+      {
+        "id": "training",
+        "title": "模型训练与研究",
+        "level": "项目实践",
+        "summary": "PyTorch 预训练实践与视觉语言研究",
+        "tags": [
+          "Python / PyTorch",
+          "Pretraining / MPS",
+          "Transformer / CLIP / ViT",
+          "Prompt Learning / 域泛化",
+          "SFT → RL：下一阶段"
+        ],
+        "projects": [
+          "nanochat-lab",
+          "dalsclip"
         ]
       },
       {
@@ -115,26 +149,50 @@
     ],
     "focus": [
       {
+        "title": "推理框架",
+        "level": "在研 / 后续拓展",
+        "detail": "vLLM · KV Cache · PagedAttention · Continuous Batching；后续对比 SGLang / TensorRT-LLM。",
+        "projects": [
+          "inference-lab"
+        ]
+      },
+      {
+        "title": "请求调度与缓存",
+        "level": "计划实践",
+        "detail": "Prefix Caching · Chunked Prefill · Speculative Decoding；结合 TTFT、吞吐与尾延迟评估取舍。",
+        "projects": [
+          "inference-lab"
+        ]
+      },
+      {
+        "title": "GPU 与低精度推理",
+        "level": "计划实践",
+        "detail": "CUDA / Triton · FlashAttention · AWQ / GPTQ · Nsight 性能分析。",
+        "projects": [
+          "inference-lab"
+        ]
+      },
+      {
+        "title": "分布式推理",
+        "level": "计划实践",
+        "detail": "Tensor / Pipeline / Expert Parallelism · NCCL · Prefill–Decode 分离。",
+        "projects": [
+          "inference-lab"
+        ]
+      },
+      {
         "title": "模型架构",
         "level": "研究与论文研读",
-        "detail": "Transformer / Attention · CLIP / ViT · 域泛化",
+        "detail": "Transformer / Attention · CLIP / ViT · 域泛化。",
         "projects": [
           "dalsclip",
           "nanochat-lab"
         ]
       },
       {
-        "title": "推理框架",
-        "level": "在研",
-        "detail": "vLLM · KV Cache · PagedAttention · Continuous Batching",
-        "projects": [
-          "inference-lab"
-        ]
-      },
-      {
         "title": "后训练管线",
         "level": "计划实践",
-        "detail": "SFT → RL / GRPO → Evaluation",
+        "detail": "SFT → RL / GRPO → Evaluation；逐步贯通训练、推理与评测。",
         "projects": [
           "nanochat-lab"
         ]
@@ -170,7 +228,7 @@
         "source": "https://www.16personalities.com/intp-personality"
       }
     },
-    "resumePdf": "/files/yuewen-zhang-industry.pdf",
+    "resumePdf": "/files/yuewen-zhang-ai-agent.pdf",
     "socialLinks": [
       {
         "id": "github",
@@ -202,7 +260,8 @@
         "label": "邮箱",
         "url": "mailto:z15000675672@gmail.com"
       }
-    ]
+    ],
+    "portraitCaption": "我有一颗勇敢的心"
   },
   "tour": {
     "title": "从实时系统到 AI Infra",

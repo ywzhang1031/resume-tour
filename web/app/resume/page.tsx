@@ -21,7 +21,7 @@ export default function Resume() {
           {profile.name}
           <span>{profile.englishName}</span>
         </h1>
-        <p>AI Infra 为主 · Coding Agent 为辅</p>
+        <p>高性能系统 · 模型训练与推理 · Coding Agent</p>
         <div>
           <a href={`mailto:${profile.email}`}>{profile.email}</a>
           <span>github.com/ywzhang1031</span>

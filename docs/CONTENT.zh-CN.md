@@ -89,7 +89,10 @@ CI 执行相同核心检查。发布使用构建后的同一份代码。Sites �
 
 ## 访客展示与联系入口
 
-- `profile.resumePdf`：顶部、联系区和打印页使用的 PDF 地址，文件放入 `web/public/files/`。目前使用 `resume` 文件夹内原有中文 AI 行业版，不随网站文案自动重生成。
+- `profile.resumePdf`：顶部、联系区和打印页使用的 PDF 地址，文件放入 `web/public/files/`。目前使用作者指定的 `resume/Chinese_version/resume_ai_agent.pdf` 原件，不随网站文案自动重生成。
 - `profile.socialLinks`：首页和联系区共用的社交链接。现有 GitHub、谷歌学术、小红书、微信二维码、个人主页及邮箱。微信二维码属于个人身份资产。
 - `profile.personal.mbtiImage`：INTP 角色的图片地址、替代文本与来源页；第三方版权见 `ASSETS.md`。
 - 章节 `duration` 保留为编辑数据，不在访客界面展示。首页与导航使用访客文案，保留原有方向键浏览、项目筛选与详情功能。
+
+- `profile.portraitCaption`：照片底部的文字，当前为“我有一颗勇敢的心”；由无边框渐变叠层呈现，原照片文件不作修改。
+- 技术栈现为六组，`focus` 中的在研与计划项目参考官方岗位要求，来源及个人能力边界见 `JD-ALIGNMENT.zh-CN.md`。
