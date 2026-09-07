@@ -8,6 +8,7 @@ An open-source personal website for presenting experience, projects and technica
 
 - A guided interview with chapters, individual steps, arrow keys, progress and fullscreen.
 - An introduction with grouped technology stacks, each linked to concrete projects.
+- Separate research and learning directions, editable training milestones, and a short landing-protection schematic.
 - A searchable project library with category and delivery-status filters.
 - Expandable technical notes with stable links and return-to-step behavior.
 - Optional Three.js data-flow scenes, static fallback and reduced-motion support.

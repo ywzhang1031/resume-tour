@@ -33,11 +33,7 @@ export default function Resume() {
       </header>
       <section>
         <h2>个人简介</h2>
-        <p>
-          具有 C++ / Linux
-          与端侧实时系统交付经验，负责无人机降落保护及硬件视频编码模块。中科院硕士，视觉语言模型与域泛化研究背景。当前通过推理测量、单设备训练和
-          Agent 运行时项目向 AI Infra 深入。
-        </p>
+        <p>{profile.resumeSummary}</p>
       </section>
       <section>
         <h2>技术栈</h2>
@@ -47,6 +43,14 @@ export default function Resume() {
               {s.title} · {s.level}：
             </strong>
             {s.tags.join(' / ')}
+          </p>
+        ))}
+        {profile.focus.map((s) => (
+          <p key={s.title}>
+            <strong>
+              {s.title} · {s.level}：
+            </strong>
+            {s.detail}
           </p>
         ))}
       </section>
@@ -79,11 +83,13 @@ export default function Resume() {
               </p>
               <p>{p.summary}</p>
               <ul>
-                {p.steps.slice(0, 2).map((s) => (
-                  <li key={s.id}>
-                    {s.title}：{s.points.join('；')}。
-                  </li>
-                ))}
+                {p.resumeHighlights
+                  ? p.resumeHighlights.map((line) => <li key={line}>{line}</li>)
+                  : p.steps.slice(0, 2).map((s) => (
+                      <li key={s.id}>
+                        {s.title}：{s.points.join('；')}。
+                      </li>
+                    ))}
               </ul>
               <p className="resume-boundary">{p.boundary}</p>
               {p.links[0] && (

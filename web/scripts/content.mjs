@@ -53,6 +53,11 @@ export function validateContent(data) {
         `${project.id}: invalid or duplicate step id`,
       );
       steps.add(step.id);
+      if (step.illustration)
+        requireValue(
+          step.illustration === 'landing-safety',
+          `${project.id}: unknown illustration`,
+        );
       requireValue(
         step.title &&
           step.body &&
@@ -61,6 +66,27 @@ export function validateContent(data) {
           step.flow.length > 1,
         `${project.id}/${step.id}: incomplete step`,
       );
+    }
+    if (project.resumeHighlights)
+      requireValue(
+        Array.isArray(project.resumeHighlights) &&
+          project.resumeHighlights.every(
+            (line) => typeof line === 'string' && line.trim(),
+          ),
+        `${project.id}: invalid resume highlights`,
+      );
+    if (project.milestones) {
+      requireValue(
+        Array.isArray(project.milestones),
+        `${project.id}: invalid milestones`,
+      );
+      for (const milestone of project.milestones)
+        requireValue(
+          milestone.label &&
+            milestone.detail &&
+            ['已完成', '在研', '计划实践'].includes(milestone.status),
+          `${project.id}: invalid milestone`,
+        );
     }
     for (const link of project.links ?? []) {
       requireValue(
@@ -95,7 +121,11 @@ export function validateContent(data) {
         `${chapter.id}: unknown project ${chapter.project}`,
       );
   }
-  for (const item of [...data.profile.stack, ...data.profile.experience]) {
+  for (const item of [
+    ...data.profile.stack,
+    ...(data.profile.focus ?? []),
+    ...data.profile.experience,
+  ]) {
     for (const id of item.projects)
       requireValue(ids.has(id), `Profile references unknown project: ${id}`);
   }
@@ -121,6 +151,10 @@ export function publicContent(input) {
     profile: {
       ...input.profile,
       stack: input.profile.stack.map((s) => ({
+        ...s,
+        projects: s.projects.filter((id) => ids.has(id)),
+      })),
+      focus: (input.profile.focus ?? []).map((s) => ({
         ...s,
         projects: s.projects.filter((id) => ids.has(id)),
       })),

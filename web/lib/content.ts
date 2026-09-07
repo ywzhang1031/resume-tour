@@ -6,6 +6,7 @@ export type Step = {
   body: string;
   points: string[];
   flow: string[];
+  illustration?: 'landing-safety';
 };
 export type Project = {
   id: string;
@@ -24,6 +25,12 @@ export type Project = {
   scene?: string;
   markdown?: string;
   relatedProjects?: string[];
+  resumeHighlights?: string[];
+  milestones?: {
+    label: string;
+    status: '已完成' | '在研' | '计划实践';
+    detail: string;
+  }[];
   metric?: { value: string; label: string; detail: string };
 };
 export type Chapter = {

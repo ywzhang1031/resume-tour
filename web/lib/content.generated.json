@@ -2,24 +2,24 @@
   "profile": {
     "name": "张跃文",
     "englishName": "Yuewen Zhang",
-    "role": "AI Infra / Systems Engineer",
+    "role": "AI Infra Engineer · C++ / LLM Systems",
     "email": "z15000675672@gmail.com",
     "github": "https://github.com/ywzhang1031",
-    "intro": "从端侧实时系统，到 LLM Infra。\n我关心计算的延迟、数据的流动，\n以及系统在真实场景中的可靠性。",
+    "intro": "从端侧高性能计算，走向大模型基础设施。\n主导实时 AI 系统从立项到上线，\n持续深入 LLM 推理、训练与 Agent Runtime。",
     "portrait": "/images/yuewen-portrait.png",
     "updated": "2026-09-07",
     "stack": [
       {
         "id": "systems",
-        "title": "系统工程",
+        "title": "C++ 高性能系统",
         "level": "工作交付",
-        "summary": "并发、数据流与资源管理",
+        "summary": "低延迟数据管线、并发与资源管理",
         "tags": [
-          "C++",
-          "Linux",
-          "多线程 / atomic / mutex",
+          "C++ / Linux",
+          "多线程 · atomic / mutex",
           "iceoryx · 零拷贝 IPC",
-          "RAII / 环形缓冲区"
+          "RAII / 有界缓冲区",
+          "性能分析 / 异步 I/O"
         ],
         "projects": [
           "landing-protection",
@@ -28,15 +28,15 @@
       },
       {
         "id": "edge",
-        "title": "端侧 AI 与视觉",
+        "title": "模型量化与部署",
         "level": "工作交付",
-        "summary": "把模型接入受限算力的实时系统",
+        "summary": "从模型量化到 BPU 实时推理",
         "tags": [
+          "地平线模型量化",
           "Horizon X5M / BPU",
-          "NV12 / YUV",
-          "OpenCV",
-          "H.265 硬件编码",
-          "模型 I/O 与后处理"
+          "模型 Runtime / Tensor I/O",
+          "NV12 / OpenCV",
+          "H.265 硬件卸载"
         ],
         "projects": [
           "landing-protection",
@@ -45,15 +45,15 @@
       },
       {
         "id": "llm",
-        "title": "LLM Infra",
+        "title": "LLM 推理与训练",
         "level": "项目实践",
-        "summary": "推理测量与单设备训练实践",
+        "summary": "服务测量、负载调度与训练链路",
         "tags": [
           "Python / PyTorch",
-          "HTTP / SSE",
-          "TTFT / TPOT",
-          "负载生成与指标校验",
-          "Apple Silicon / MPS"
+          "HTTP / SSE Streaming",
+          "TTFT / TPOT / E2E",
+          "Open-loop / Closed-loop",
+          "Pretraining / MPS"
         ],
         "projects": [
           "inference-lab",
@@ -62,15 +62,15 @@
       },
       {
         "id": "agents",
-        "title": "Coding Agent",
+        "title": "Coding Agent Runtime",
         "level": "项目实践",
-        "summary": "可控运行时、插件与执行轨迹",
+        "summary": "工具执行、上下文与可追溯运行时",
         "tags": [
-          "TypeScript / React",
-          "工具协议与权限",
-          "JSONL / 事件回放",
+          "Tool Calling / 权限控制",
           "Context / Compaction",
-          "DSH 插件"
+          "JSONL / 事件回放",
+          "TypeScript / React",
+          "DSH 插件扩展"
         ],
         "projects": [
           "my-agent",
@@ -84,27 +84,60 @@
         "period": "2024.07 — 2026.06",
         "org": "影石 Insta360 · Antigravity",
         "role": "感知导航 · 高性能计算工程师",
-        "description": "负责无人机降落保护与多路视频编码模块，将 AI 视觉、多源传感器与硬件能力接入实时系统。",
+        "description": "担任无人机降落保护与多路视频编码项目的研发负责人，主导从立项、产品需求对齐、架构设计、开发优化，到飞控等团队联调与上线交付。",
         "projects": [
           "landing-protection",
           "video-pipeline"
         ]
       },
       {
-        "period": "2021 — 2024",
-        "org": "中国科学院 · 上海微系统所",
-        "role": "硕士 · 域泛化与视觉语言模型",
-        "description": "围绕 CLIP 的域泛化开展研究。2021—2022 年在中国科学技术大学联合培养课程阶段，2024 年硕士毕业。",
+        "period": "2021.09 — 2024.06",
+        "org": "中国科学院大学 · 中国科学院上海微系统与信息技术研究所",
+        "role": "电子信息 · 硕士",
+        "description": "微系统技术国家重点实验室。研究视觉语言模型与域泛化，第一作者论文发表于 Image and Vision Computing。2021.09—2022.06 在中国科学技术大学电子科学与技术系联合培养课程学习；2022.08—2024.06 在研究所开展硕士研究。",
         "projects": [
           "dalsclip"
-        ]
+        ],
+        "lab": "微系统技术国家重点实验室"
       },
       {
         "period": "2017 — 2021",
         "org": "上海海事大学",
-        "role": "本科 · 通信工程",
+        "role": "通信工程 · 工学学士",
         "description": "从通信与信号处理出发，逐步走向模型、系统与工程实现。",
         "projects": []
+      }
+    ],
+    "resumeSummary": "C++ / Linux 高性能系统工程背景，作为研发负责人推动无人机降落保护与多路视频编码从需求对齐、研发联调到产品上线，负责模型量化与端侧部署。电子信息硕士，具备视觉语言模型与域泛化研究经历；当前推进 LLM 推理测量、PyTorch 训练实践与 Coding Agent Runtime。",
+    "introTags": [
+      "影石 · HPC / 项目研发负责人",
+      "中国科学院大学 · 电子信息硕士"
+    ],
+    "focus": [
+      {
+        "title": "模型架构",
+        "level": "研究与论文研读",
+        "detail": "Transformer / Attention · CLIP / ViT · 域泛化",
+        "projects": [
+          "dalsclip",
+          "nanochat-lab"
+        ]
+      },
+      {
+        "title": "推理框架",
+        "level": "在研",
+        "detail": "vLLM · KV Cache · PagedAttention · Continuous Batching",
+        "projects": [
+          "inference-lab"
+        ]
+      },
+      {
+        "title": "后训练管线",
+        "level": "计划实践",
+        "detail": "SFT → RL / GRPO → Evaluation",
+        "projects": [
+          "nanochat-lab"
+        ]
       }
     ]
   },
@@ -128,7 +161,7 @@
         "project": "landing-protection",
         "title": "降落保护",
         "kind": "project",
-        "duration": "2 分钟"
+        "duration": "2 分 30 秒"
       },
       {
         "id": "video-pipeline",
@@ -142,14 +175,14 @@
         "project": "inference-lab",
         "title": "LLM Infra",
         "kind": "project",
-        "duration": "1 分钟"
+        "duration": "1 分 15 秒"
       },
       {
         "id": "nanochat-lab",
         "project": "nanochat-lab",
-        "title": "训练实践",
+        "title": "训练 / RL",
         "kind": "project",
-        "duration": "45 秒"
+        "duration": "1 分钟"
       },
       {
         "id": "my-agent",
@@ -172,42 +205,60 @@
         "duration": "30 秒"
       }
     ],
-    "duration": "约 8 分钟"
+    "duration": "约 9 分钟"
   },
   "projects": [
     {
       "id": "landing-protection",
       "title": "无人机降落保护",
-      "subtitle": "把实时感知，变成可靠的安全判断。",
+      "subtitle": "从需求到上线，负责一条实时 AI 安全链路。",
       "category": "工作交付",
       "status": "已交付",
       "visibility": "visible",
       "order": 0,
-      "role": "降落保护模块开发与端侧模型集成",
+      "role": "项目研发负责人 · 需求对齐、架构研发、量化部署与上线交付",
       "tags": [
         "C++",
         "Linux",
+        "模型量化",
+        "BPU Runtime",
         "iceoryx",
         "NV12",
-        "多传感器融合",
-        "并发"
+        "并发 / epoch"
       ],
-      "summary": "融合视觉、深度、ToF 与导航数据，识别水面、不适宜地形和障碍物，为飞控提供降落保护状态。",
+      "summary": "主导降落保护项目从立项到上线，完成产品与飞控需求对齐、模型量化部署、多传感器融合和实时性能优化，为无人机提供水面、地形与障碍物的降落安全判断。",
       "steps": [
         {
           "id": "step-1",
-          "title": "先判断：这里能不能降落？",
-          "body": "在自动或手动降落过程中，把多源感知结果组织为飞控可消费的状态和原因。",
+          "title": "把安全需求变成上线功能",
+          "body": "作为研发负责人，与产品对齐水面、地形和障碍物场景，与飞控团队约定状态和异常处理，负责设计、研发、联调与上线。",
           "points": [
-            "水体分割：按水面占比动态调整检测频率",
-            "近地场景分类：在 1.5 m 以下识别地形",
-            "距离感知：结合深度、姿态和导航数据"
+            "自动 / 手动降落时，实时判断下方区域是否适合降落",
+            "本人完成感知模块、模型量化与端侧推理链路",
+            "与飞控联合打通“安全判断 → 降落策略”的产品闭环"
           ],
           "flow": [
-            "双目 / 深度 / ToF",
-            "时间对齐",
-            "模型推理与融合",
-            "状态 + reason"
+            "需求 / 立项",
+            "架构 / 研发",
+            "跨团队联调",
+            "产品上线"
+          ],
+          "illustration": "landing-safety"
+        },
+        {
+          "id": "model-deployment",
+          "title": "从模型量化到端侧推理",
+          "body": "使用地平线工具链完成模型量化，并负责模型加载、Tensor I/O、推理调用、后处理与系统验证，将视觉模型接入受限算力的实时链路。",
+          "points": [
+            "本人执行模型量化，衔接算法模型与 BPU 部署",
+            "保持输入格式、预处理与后处理的一致性",
+            "结合实际场景检查输出与处理时延，完成系统联调"
+          ],
+          "flow": [
+            "算法模型",
+            "工具链量化",
+            "BPU 推理",
+            "后处理 / 验证"
           ]
         },
         {
@@ -215,9 +266,9 @@
           "title": "让不同节奏的数据对齐",
           "body": "使用有界环形缓冲区保存近期帧，以主传感器时间戳寻找最近邻数据，剔除超出容差的配对。",
           "points": [
-            "不同传感器独立缓存，定期清理过期数据",
-            "100 ms 是配对容差，不是算法运行耗时",
-            "需要先处理时钟基准，匹配只对可比较时间戳有效"
+            "视觉、深度、ToF 与导航数据分别进入有界缓存",
+            "最近邻时间匹配，100 ms 容差控制有效配对",
+            "统一时间基准、清理过期帧，平衡配对率与时效性"
           ],
           "flow": [
             "传感器帧",
@@ -228,12 +279,12 @@
         },
         {
           "id": "step-3",
-          "title": "模式变了，旧结果就不能再生效",
-          "body": "用细粒度锁保护共享数据，用 epoch 版本检查阻止跨模式的过期结果继续发布。",
+          "title": "同时解决过期结果与性能瓶颈",
+          "body": "用 epoch 版本检查解决取消降落后旧回调仍发布结果的问题；分段计时定位开销，将指定工况下的单帧处理从约 50–60 ms 降至 20 ms 以内。",
           "points": [
-            "模式重置时递增 epoch，处理前后核对版本",
-            "弱光时输出 Invalid 与原因，避免错误视觉判断",
-            "NV12 直接输入、高度门控、异步保存减少主链路开销"
+            "细粒度锁 + atomic + epoch，管理共享数据与跨模式结果",
+            "NV12 直接输入、异步图片保存，压缩主回调耗时",
+            "高度门控、1–15 Hz 动态检测与弱光降级，兼顾算力和可靠性"
           ],
           "flow": [
             "读取 epoch",
@@ -243,8 +294,13 @@
           ]
         }
       ],
-      "links": [],
-      "boundary": "本人负责系统模块与端侧集成；模型量化、编译产物由算法同事提供。",
+      "links": [
+        {
+          "label": "官方手册 · 降落保护",
+          "url": "https://static.antigravity.tech/assets/a1258d3164e30372bacbcba1183c1bb9/Antigravity_A1_User%20Manual_EN_V1.0_20260224.pdf"
+        }
+      ],
+      "boundary": "我负责项目研发闭环与感知侧系统实现；与飞控团队共同约定状态接口，由飞控执行降落控制。",
       "scene": "pipeline",
       "metric": {
         "value": "< 20 ms",
@@ -252,18 +308,23 @@
         "detail": "项目指定工况测试记录：单帧约 50–60 ms → 20 ms 以内。耗时口径为模块单帧处理。"
       },
       "note": "landing-protection.md",
-      "markdown": "# 技术深挖：降落保护\n\n## 100 ms 与实时预算\n\n100 ms 是多传感器帧配对的容差。它取决于传感器延迟分布、匹配成功率和飞机运动速度。它不能替代时间戳基准的统一，也不代表从输入到飞控的端到端延迟。\n\n## epoch 如何防止旧结果\n\n1. 本轮处理开始时记录版本，例如 `epoch = 7`。\n2. 用户取消降落，重置状态，版本推进至 `8`。\n3. 旧帧算法返回后发现 `7 != 8`，丢弃结果。\n\n共享缓冲区仍通过 mutex 保护，频繁读取的标志通过 atomic 管理。版本校验与结果发布之间的并发边界同样需要受控；这不是整个系统无锁的保证。\n\n## 实时优化\n\n直接使用 NV12 模型输入，减少颜色空间转换；将图像保存移出主回调；用飞行模式、高度与动态频率门控减少不必要推理。使用分段计时区分 buffer 操作、算法与其他耗时。\n\n## 个人职责\n\n负责模块开发、数据组织、模型加载与 I/O、推理调用、后处理和验证。量化和编译的模型文件来自算法团队。飞控消费状态并执行降落策略。\n",
+      "resumeHighlights": [
+        "作为研发负责人，主导立项、产品需求对齐、架构研发与飞控联调，推动功能上线。",
+        "使用地平线工具链完成模型量化与 BPU 部署，组织多传感器时间对齐、推理及后处理。",
+        "以 epoch 处理跨模式过期结果；NV12 直输、异步 I/O 与门控优化，使指定工况单帧约 50–60 ms 降至 20 ms 以内。"
+      ],
+      "markdown": "# 技术深挖：降落保护\n\n## 从立项到上线的研发责任\n\n担任项目研发负责人，从产品场景和安全需求拆解开始，负责架构设计、模块开发、模型量化与端侧部署、性能优化，并与飞控等团队完成状态接口对齐、联调和上线。感知侧输出状态与原因，飞控侧依据约定执行降落控制。\n\n## 模型量化与部署\n\n使用地平线工具链完成模型量化，负责将算法模型接入 BPU 推理链路，包括模型加载、输入输出组织、推理调用、后处理及场景验证。\n\n### 地平线 PTQ 工具链参考\n\n官方流程将模型检查、校准量化、编译和性能评估串联起来。`hb_mapper makertbin` 是量化与编译的转换工具；板端推理接口负责执行已转换的模型。\n\n以下为官方 ONNX 转换命令示例，具体项目脚本与参数以当时使用的 SDK 为准：\n\n```bash\nhb_mapper makertbin --model-type onnx --config config.yaml\n```\n\nYAML 配置涵盖 `model_parameters`、`input_parameters`、`calibration_parameters` 与 `compiler_parameters`。校准数据与模型预处理需一致；部署时还要核对 NV12 等运行时输入约定。检查转换后的精度表现与板端耗时，才能判断模型是否满足应用要求。\n\n参考：[X5 PTQ 官方流程](https://developer.d-robotics.cc/rdk_x_doc/en/Advanced_development/toolchain_development/intermediate/ptq_process)、[地平线 YAML 配置说明](https://developer.horizon.auto/blog/10375)。\n\n## 100 ms 与实时预算\n\n100 ms 是多传感器帧配对的容差。它取决于传感器延迟分布、匹配成功率和飞机运动速度。它不能替代时间戳基准的统一，也不代表从输入到飞控的端到端延迟。\n\n## epoch 如何防止旧结果\n\n1. 本轮处理开始时记录版本，例如 `epoch = 7`。\n2. 用户取消降落，重置状态，版本推进至 `8`。\n3. 旧帧算法返回后发现 `7 != 8`，丢弃结果。\n\n共享缓冲区仍通过 mutex 保护，频繁读取的标志通过 atomic 管理。版本校验与结果发布之间的并发边界同样需要受控；这不是整个系统无锁的保证。\n\n## 实时优化\n\n直接使用 NV12 模型输入，减少颜色空间转换；将图像保存移出主回调；用飞行模式、高度与动态频率门控减少不必要推理。使用分段计时区分 buffer 操作、算法与其他耗时。\n\n## 场景展示\n\n导览中的 8 秒动画是对降落保护决策流程的示意，不是实飞录像。官方手册的 Landing Protection 章节说明了检测到不适宜地面或水面后暂停降落、悬停并等待用户输入的产品行为。实际可用性取决于环境与飞行状态。\n",
       "relatedProjects": []
     },
     {
       "id": "video-pipeline",
       "title": "多路视频编码系统",
-      "subtitle": "有限的算力，持续流动的图像。",
+      "subtitle": "从多路图像，到可回放、可预览的产品能力。",
       "category": "工作交付",
       "status": "已交付",
       "visibility": "visible",
       "order": 10,
-      "role": "硬件编码封装、通道生命周期与录制逻辑",
+      "role": "项目研发负责人 · 需求与跨团队协作、架构开发、联调上线",
       "tags": [
         "C++",
         "H.265",
@@ -272,12 +333,12 @@
         "RAII",
         "iceoryx"
       ],
-      "summary": "将多类型传感器图像按需接入硬件编码，支持循环录制、事故片段保护和实时码流发布。",
+      "summary": "负责多路视频编码项目从需求梳理到上线：统一接入 13 类图像，封装硬件编码与资源生命周期，完成循环录制、事故保护及码流发布。",
       "steps": [
         {
           "id": "step-1",
           "title": "让不同图像走进同一条管线",
-          "body": "订阅层兼容 13 类输入，预处理层处理格式、对齐、双目拼接与深度可视化。",
+          "body": "从产品的回放、调试和预览需求出发，主导架构与研发，协同传感器、飞控和图传等团队联调，形成兼容 13 类输入的统一编码管线。",
           "points": [
             "按配置启用通道，避免所有编码器常驻",
             "BGR → NV12、宽度对齐与双目拼接",
@@ -324,7 +385,7 @@
         }
       ],
       "links": [],
-      "boundary": "事故片段保护是覆盖策略，不等同于断电后的文件完整性保证。",
+      "boundary": "负责该项目研发与上线交付。13 类为兼容的输入类型，运行时根据配置按需启用编码通道。",
       "scene": "pipeline",
       "metric": {
         "value": "13 类",
@@ -332,13 +393,18 @@
         "detail": "按配置启用编码通道，覆盖双目、主摄、全景与深度可视化等输入类型。"
       },
       "note": "video-pipeline.md",
+      "resumeHighlights": [
+        "牵头需求拆解、模块研发与跨团队联调，交付兼容 13 类传感器图像的硬件编码管线。",
+        "封装 H.265 输入 / 输出队列与 RAII 资源管理，按需初始化通道，减少常驻资源开销。",
+        "实现 5 分钟循环录制、最多 3 个事故片段保护与动态预览切换，支持飞行回放和现场调试。"
+      ],
       "markdown": "# 技术深挖：编码与生命周期\n\n## 一次编码调用\n\n从硬件队列取输入缓冲区，填充并提交图像；取出编码输出，交给存储或发布链路，然后归还输出缓冲区。异常路径也必须归还已获取资源。\n\n## 为什么按需创建\n\n不同传感器组合并不总是同时使用。将配置与通道实例关联，配合运行模式和预览指令管理生命周期，控制资源占用。\n\n## 循环录制与事故保护\n\n默认五个时间片构成五分钟窗口。覆盖最旧的未保护片段；碰撞事件将相关片段置为受保护，最多保护三片。此机制解决逻辑覆盖问题，断电一致性需要额外的文件系统与持久化设计。\n",
       "relatedProjects": []
     },
     {
       "id": "inference-lab",
       "title": "LLM Inference Systems Lab",
-      "subtitle": "先把性能测准，再讨论优化。",
+      "subtitle": "用可复现的测量，连接负载、调度与推理性能。",
       "category": "AI Infra",
       "status": "开发中",
       "visibility": "visible",
@@ -350,7 +416,10 @@
         "SSE",
         "TTFT",
         "TPOT",
-        "Benchmark"
+        "Benchmark",
+        "vLLM（在研）",
+        "Open-loop",
+        "KV Cache（研读）"
       ],
       "summary": "构建可追溯的 LLM 推理测量工具，明确请求边界、流式输出语义、错误统计与延迟指标。",
       "steps": [
@@ -385,12 +454,32 @@
             "实际提交",
             "首 token / 完成"
           ]
+        },
+        {
+          "id": "serving-research",
+          "title": "向 vLLM 的调度与内存机制深入",
+          "body": "围绕自建测量工具继续研究 vLLM：理解请求调度和 KV Cache 管理，再将问题映射到吞吐、首 token 和逐 token 延迟。",
+          "points": [
+            "当前研读：PagedAttention 与 KV Cache 的内存组织",
+            "当前研读：Continuous Batching 下请求的进入与退出",
+            "后续实验：在明确硬件和负载条件下比较调度配置"
+          ],
+          "flow": [
+            "请求 / 负载",
+            "Batch 调度",
+            "KV Cache",
+            "延迟 / 吞吐"
+          ]
         }
       ],
       "links": [
         {
           "label": "GitHub · 公开基线",
           "url": "https://github.com/ywzhang1031/llm-inference-systems-lab"
+        },
+        {
+          "label": "研读 · vLLM 官方文档",
+          "url": "https://docs.vllm.ai/en/stable/"
         }
       ],
       "boundary": "当前环境：Apple Silicon；重点验证协议与指标。公开版为闭环基线，Open-loop 与 HTTP 链路正在迭代。",
@@ -401,25 +490,26 @@
     },
     {
       "id": "nanochat-lab",
-      "title": "nanochat 训练实践",
-      "subtitle": "沿着训练链路，理解成本与约束。",
+      "title": "nanochat · 大模型训练管线",
+      "subtitle": "从预训练出发，延伸到 SFT 与 RL。",
       "category": "AI Infra",
       "status": "阶段实验完成",
       "visibility": "visible",
       "order": 30,
-      "role": "基于上游框架的单设备训练实践",
+      "role": "训练管线实践者 · 已完成预训练阶段实验",
       "tags": [
         "PyTorch",
-        "Python",
+        "Dense GPT / Transformer",
+        "Pretraining",
         "MPS",
-        "Dense GPT",
-        "Pretraining"
+        "SFT（计划）",
+        "RL / GRPO（计划）"
       ],
-      "summary": "在 Apple Silicon 上运行 Dense GPT 基础训练，观察批量、序列长度和梯度累积如何影响训练过程。",
+      "summary": "基于 nanochat 完成 Dense GPT 单设备预训练 checkpoint，沿“Pretraining → SFT → RL / GRPO → Evaluation”扩展整条训练实践路线。",
       "steps": [
         {
           "id": "step-1",
-          "title": "让完整训练链路跑起来",
+          "title": "预训练：把数据变成 checkpoint",
           "body": "基于 Karpathy 的 nanochat，完成 d6 与 d12 Dense GPT 的单设备基础训练 checkpoint。",
           "points": [
             "每个实验完成 5,000 步",
@@ -435,18 +525,34 @@
         },
         {
           "id": "step-2",
-          "title": "实验结果，要连同条件一起解释",
-          "body": "记录训练配置和 checkpoint，避免把不同上下文长度的实验直接当作受控 scaling 对比。",
+          "title": "把训练成本与实验条件讲清楚",
+          "body": "围绕序列长度、有效 batch、梯度累积和 checkpoint 组织实验记录，理解训练的计算与显存约束。",
           "points": [
-            "硬件为 Apple Silicon / MPS",
-            "基于上游项目，不作为原创训练框架",
-            "SFT / GRPO 尚未形成完成结果"
+            "基于 PyTorch，在 Apple Silicon / MPS 上完成实验",
+            "d6 与 d12 使用不同上下文长度，分别记录配置与预算",
+            "以复现实验与理解训练流程为重点"
           ],
           "flow": [
-            "训练配置",
-            "计算预算",
-            "实验记录",
-            "明确边界"
+            "序列 / Batch",
+            "梯度累积",
+            "训练与记录",
+            "结果分析"
+          ]
+        },
+        {
+          "id": "post-training",
+          "title": "下一阶段：SFT → RL / GRPO → 评测",
+          "body": "将预训练实践向对话与强化学习阶段推进，计划打通数据、训练、奖励与评测闭环。当前已完成预训练 checkpoint，后训练实验按阶段补充。",
+          "points": [
+            "SFT：计划实践对话样本组织、loss mask 与微调",
+            "RL / GRPO：计划实践 rollout、奖励、组内优势与策略更新",
+            "Evaluation：计划比较各阶段输出、任务效果与训练成本"
+          ],
+          "flow": [
+            "Pretraining · 已完成",
+            "SFT · 计划",
+            "RL / GRPO · 计划",
+            "Evaluation · 计划"
           ]
         }
       ],
@@ -456,8 +562,34 @@
           "url": "https://github.com/karpathy/nanochat"
         }
       ],
-      "boundary": "实验范围：基于上游 nanochat，在 Apple Silicon / MPS 上进行单设备 Dense GPT 基础训练。",
+      "boundary": "当前完成：单设备 Dense GPT 预训练实验；后续路线：SFT、RL / GRPO 与阶段评测。",
       "scene": "pipeline",
+      "milestones": [
+        {
+          "label": "Pretraining",
+          "status": "已完成",
+          "detail": "d6 / d12 · 各 5,000 步"
+        },
+        {
+          "label": "SFT",
+          "status": "计划实践",
+          "detail": "对话数据与监督微调"
+        },
+        {
+          "label": "RL / GRPO",
+          "status": "计划实践",
+          "detail": "Rollout、奖励与策略更新"
+        },
+        {
+          "label": "Evaluation",
+          "status": "计划实践",
+          "detail": "阶段效果与成本对比"
+        }
+      ],
+      "resumeHighlights": [
+        "完成 d6 / d12 预训练 checkpoint，各 5,000 步、约 81.92M 训练 tokens，记录序列长度与有效 batch。",
+        "后续管线：SFT → RL / GRPO → Evaluation，按阶段补充实验与结果。"
+      ],
       "relatedProjects": []
     },
     {

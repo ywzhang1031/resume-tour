@@ -36,14 +36,17 @@ def text(value, style='body'):
 def section(value): return text(value, 'section')
 
 def block(project, detailed=False):
- parts = [text(project['title'] + ' | ' + project['status'], 'heading'), text(project['role'] + '。' + project['summary'])]
- if detailed:
+ parts = [text(project['title'] + ' | ' + project['status'], 'heading')]
+ if not detailed: parts.append(text(project['summary']))
+ if project.get('resumeHighlights'):
+  for line in project['resumeHighlights']: parts.append(text('• ' + line))
+ elif detailed:
   for step in project['steps']:
    parts.append(text('• ' + '；'.join(step['points'][:2]) + '。'))
  else:
   parts.append(text('• ' + '；'.join(project['steps'][0]['points']) + '。'))
- parts.append(text(project['boundary'], 'small'))
- if project['links']:
+ if not detailed: parts.append(text(project['boundary'], 'small'))
+ if project['links'] and not detailed:
   link = project['links'][0]
   label = link['url'].replace('https://','')
   if project['category'] == '研究': label='Image and Vision Computing, 154, 105359 (2025)'
@@ -51,14 +54,17 @@ def block(project, detailed=False):
  parts.append(Spacer(1, 7))
  return KeepTogether(parts)
 
-story = [text(p['name'] + '  |  ' + p['englishName'], 'title'), text(p['role'] + '  ·  ' + p['email']), text(p['github'], 'small'), section('个人简介'), text('C++ / Linux 与端侧实时系统工程经验，负责无人机降落保护及硬件编码模块。中科院硕士，视觉语言模型与域泛化研究背景。当前通过推理测量、单设备训练与 Agent 运行时项目向 AI Infra 深入。'), section('技术栈')]
+story = [text(p['name'] + '  |  ' + p['englishName'], 'title'), text(p['role'] + '  ·  ' + p['email']), text(p['github'], 'small'), section('个人简介'), text(p['resumeSummary']), section('技术栈')]
 for group in p['stack']: story.append(text(group['title'] + '（' + group['level'] + '）：' + ' / '.join(group['tags'])))
 story += [section('工作经历'), text(p['experience'][0]['org'] + '  |  2024.07 - 2026.06', 'heading'),text(p['experience'][0]['role'])]
 for id in selection['workProjects']:
  if id in projects: story.append(block(projects[id], True))
 story += [section('教育经历')]
-for e in p['experience'][1:]: story.append(text(e['org'] + ' | ' + e['period'] + ' | ' + e['role']))
+for e in p['experience'][1:]:
+ story.append(text(e['org'] + ' | ' + e['period'] + ' | ' + e['role']))
+ if e.get('lab'): story.append(text(e['lab'], 'small'))
 story += [PageBreak(), text('项目实践与研究', 'title'),text('公开项目与实验记录 · 以各项目说明中的环境和版本为准','small')]
+for focus in p.get('focus', []): story.append(text(focus['title'] + '（' + focus['level'] + '）：' + focus['detail'], 'small'))
 for id in selection['selectedProjects']:
  if id in projects: story.append(block(projects[id]))
 

@@ -18,7 +18,7 @@
       "project": "landing-protection",
       "title": "降落保护",
       "kind": "project",
-      "duration": "2 分钟"
+      "duration": "2 分 30 秒"
     },
     {
       "id": "video-pipeline",
@@ -32,14 +32,14 @@
       "project": "inference-lab",
       "title": "LLM Infra",
       "kind": "project",
-      "duration": "1 分钟"
+      "duration": "1 分 15 秒"
     },
     {
       "id": "nanochat-lab",
       "project": "nanochat-lab",
-      "title": "训练实践",
+      "title": "训练 / RL",
       "kind": "project",
-      "duration": "45 秒"
+      "duration": "1 分钟"
     },
     {
       "id": "my-agent",
@@ -62,5 +62,5 @@
       "duration": "30 秒"
     }
   ],
-  "duration": "约 8 分钟"
+  "duration": "约 9 分钟"
 }

@@ -4,7 +4,7 @@
 
 ## 文件与更新
 
-- `content/profile.json`：身份、邮箱、肖像路径、技术栈、经历。
+- `content/profile.json`：身份、邮箱、肖像路径、技术栈、经历。`introTags` 控制首页标签；`resumeSummary` 统一网页与 PDF 简介；`focus` 展示模型研究、在研与下一阶段方向。
 - `content/projects/*.json`：一个文件对应一个项目。
 - `content/notes/*.md`：长篇技术说明，通过项目的 `note` 文件名关联。
 - `content/tour.json`：章节顺序与稳定项目引用。
@@ -29,6 +29,10 @@
 
 首页技术栈关联项目：修改对应分组的 `projects`。项目间关联：使用 `relatedProjects`。
 
+阶段进度使用项目的 `milestones` 数组：每项填写 `label`、`status`（`已完成` / `在研` / `计划实践`）和 `detail`。可独立更新预训练、SFT、RL 与评测进展，导览和详情自动展示。
+
+步骤可选 `illustration: "landing-safety"`，展示可播放的 8 秒降落保护流程示意；静态 / 减少动态效果模式下保留手动选步。它是本站绘制的示意动画，不是实飞录像。
+
 ## 修改、排序与查找
 
 标题可以随时改；稳定 ID 用于外部链接和内部引用，应保持不变。讲述步骤也具有稳定 ID。
@@ -48,6 +52,8 @@
 ## 证据与细节
 
 `links` 使用带标签的 HTTPS URL；`metric` 包含 `value`、`label`、`detail`，注明硬件、测量口径、版本或适用条件。`boundary` 简要描述个人职责或实验范围。`note` 只能引用 `content/notes` 中的 Markdown 文件，页面不执行原始 HTML。
+
+`resumeHighlights` 可选，用于给网页简历与 PDF 提供精简要点，不必压缩面试导览的详细步骤。内容表述应区分工作交付、已完成实验、当前研读和计划实践。
 
 ## PDF
 

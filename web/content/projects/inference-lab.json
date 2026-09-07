@@ -1,13 +1,23 @@
 {
   "id": "inference-lab",
   "title": "LLM Inference Systems Lab",
-  "subtitle": "先把性能测准，再讨论优化。",
+  "subtitle": "用可复现的测量，连接负载、调度与推理性能。",
   "category": "AI Infra",
   "status": "开发中",
   "visibility": "visible",
   "order": 20,
   "role": "独立设计负载、测量协议与分析流程",
-  "tags": ["Python", "HTTP", "SSE", "TTFT", "TPOT", "Benchmark"],
+  "tags": [
+    "Python",
+    "HTTP",
+    "SSE",
+    "TTFT",
+    "TPOT",
+    "Benchmark",
+    "vLLM（在研）",
+    "Open-loop",
+    "KV Cache（研读）"
+  ],
   "summary": "构建可追溯的 LLM 推理测量工具，明确请求边界、流式输出语义、错误统计与延迟指标。",
   "steps": [
     {
@@ -31,12 +41,27 @@
         "两者差值用于识别客户端调度滞后"
       ],
       "flow": ["计划到达", "调度 / 排队", "实际提交", "首 token / 完成"]
+    },
+    {
+      "id": "serving-research",
+      "title": "向 vLLM 的调度与内存机制深入",
+      "body": "围绕自建测量工具继续研究 vLLM：理解请求调度和 KV Cache 管理，再将问题映射到吞吐、首 token 和逐 token 延迟。",
+      "points": [
+        "当前研读：PagedAttention 与 KV Cache 的内存组织",
+        "当前研读：Continuous Batching 下请求的进入与退出",
+        "后续实验：在明确硬件和负载条件下比较调度配置"
+      ],
+      "flow": ["请求 / 负载", "Batch 调度", "KV Cache", "延迟 / 吞吐"]
     }
   ],
   "links": [
     {
       "label": "GitHub · 公开基线",
       "url": "https://github.com/ywzhang1031/llm-inference-systems-lab"
+    },
+    {
+      "label": "研读 · vLLM 官方文档",
+      "url": "https://docs.vllm.ai/en/stable/"
     }
   ],
   "boundary": "当前环境：Apple Silicon；重点验证协议与指标。公开版为闭环基线，Open-loop 与 HTTP 链路正在迭代。",

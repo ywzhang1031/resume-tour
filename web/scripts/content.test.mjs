@@ -26,6 +26,9 @@ test('hidden, draft and archived projects never leak through tour or profile ref
     assert.ok(
       !result.profile.stack.some((s) => s.projects.includes(project.id)),
     );
+    assert.ok(
+      !result.profile.focus.some((s) => s.projects.includes(project.id)),
+    );
   }
 });
 test('deleting a referenced project and duplicate IDs fail before build', () => {
@@ -60,7 +63,7 @@ test('unknown hashes fall back and detail hash preserves tour step', () => {
     tour.chapters,
     projects,
   );
-  assert.equal(state.step, 1);
+  assert.equal(state.step, 2);
   assert.equal(state.project, 'dsh-aside');
   assert.equal(
     normalizeLocation(
@@ -76,9 +79,19 @@ test('previous from a chapter returns to prior final step', () => {
   const index = tour.chapters.findIndex((c) => c.id === 'video-pipeline');
   assert.deepEqual(movePosition(index, 0, -1, tour.chapters, projects), [
     index - 1,
-    2,
+    3,
   ]);
   assert.deepEqual(movePosition(0, 0, -1, tour.chapters, projects), [0, 0]);
+});
+test('unsupported illustrations and milestone states fail before publishing', () => {
+  const data = loadContent();
+  data.projects[0].steps[0].illustration = 'missing-player';
+  assert.throws(() => publicContent(data), /unknown illustration/);
+  delete data.projects[0].steps[0].illustration;
+  data.projects[0].milestones = [
+    { label: 'RL', status: 'maybe', detail: 'test' },
+  ];
+  assert.throws(() => publicContent(data), /invalid milestone/);
 });
 test('combined search and filters include tags and provide a true empty result', () => {
   const { projects } = publicContent(loadContent());

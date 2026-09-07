@@ -1,66 +1,66 @@
 {
   "name": "张跃文",
   "englishName": "Yuewen Zhang",
-  "role": "AI Infra / Systems Engineer",
+  "role": "AI Infra Engineer · C++ / LLM Systems",
   "email": "z15000675672@gmail.com",
   "github": "https://github.com/ywzhang1031",
-  "intro": "从端侧实时系统，到 LLM Infra。\n我关心计算的延迟、数据的流动，\n以及系统在真实场景中的可靠性。",
+  "intro": "从端侧高性能计算，走向大模型基础设施。\n主导实时 AI 系统从立项到上线，\n持续深入 LLM 推理、训练与 Agent Runtime。",
   "portrait": "/images/yuewen-portrait.png",
   "updated": "2026-09-07",
   "stack": [
     {
       "id": "systems",
-      "title": "系统工程",
+      "title": "C++ 高性能系统",
       "level": "工作交付",
-      "summary": "并发、数据流与资源管理",
+      "summary": "低延迟数据管线、并发与资源管理",
       "tags": [
-        "C++",
-        "Linux",
-        "多线程 / atomic / mutex",
+        "C++ / Linux",
+        "多线程 · atomic / mutex",
         "iceoryx · 零拷贝 IPC",
-        "RAII / 环形缓冲区"
+        "RAII / 有界缓冲区",
+        "性能分析 / 异步 I/O"
       ],
       "projects": ["landing-protection", "video-pipeline"]
     },
     {
       "id": "edge",
-      "title": "端侧 AI 与视觉",
+      "title": "模型量化与部署",
       "level": "工作交付",
-      "summary": "把模型接入受限算力的实时系统",
+      "summary": "从模型量化到 BPU 实时推理",
       "tags": [
+        "地平线模型量化",
         "Horizon X5M / BPU",
-        "NV12 / YUV",
-        "OpenCV",
-        "H.265 硬件编码",
-        "模型 I/O 与后处理"
+        "模型 Runtime / Tensor I/O",
+        "NV12 / OpenCV",
+        "H.265 硬件卸载"
       ],
       "projects": ["landing-protection", "video-pipeline"]
     },
     {
       "id": "llm",
-      "title": "LLM Infra",
+      "title": "LLM 推理与训练",
       "level": "项目实践",
-      "summary": "推理测量与单设备训练实践",
+      "summary": "服务测量、负载调度与训练链路",
       "tags": [
         "Python / PyTorch",
-        "HTTP / SSE",
-        "TTFT / TPOT",
-        "负载生成与指标校验",
-        "Apple Silicon / MPS"
+        "HTTP / SSE Streaming",
+        "TTFT / TPOT / E2E",
+        "Open-loop / Closed-loop",
+        "Pretraining / MPS"
       ],
       "projects": ["inference-lab", "nanochat-lab"]
     },
     {
       "id": "agents",
-      "title": "Coding Agent",
+      "title": "Coding Agent Runtime",
       "level": "项目实践",
-      "summary": "可控运行时、插件与执行轨迹",
+      "summary": "工具执行、上下文与可追溯运行时",
       "tags": [
-        "TypeScript / React",
-        "工具协议与权限",
-        "JSONL / 事件回放",
+        "Tool Calling / 权限控制",
         "Context / Compaction",
-        "DSH 插件"
+        "JSONL / 事件回放",
+        "TypeScript / React",
+        "DSH 插件扩展"
       ],
       "projects": ["my-agent", "dsh-aside", "trajectory-vault"]
     }
@@ -70,22 +70,45 @@
       "period": "2024.07 — 2026.06",
       "org": "影石 Insta360 · Antigravity",
       "role": "感知导航 · 高性能计算工程师",
-      "description": "负责无人机降落保护与多路视频编码模块，将 AI 视觉、多源传感器与硬件能力接入实时系统。",
+      "description": "担任无人机降落保护与多路视频编码项目的研发负责人，主导从立项、产品需求对齐、架构设计、开发优化，到飞控等团队联调与上线交付。",
       "projects": ["landing-protection", "video-pipeline"]
     },
     {
-      "period": "2021 — 2024",
-      "org": "中国科学院 · 上海微系统所",
-      "role": "硕士 · 域泛化与视觉语言模型",
-      "description": "围绕 CLIP 的域泛化开展研究。2021—2022 年在中国科学技术大学联合培养课程阶段，2024 年硕士毕业。",
-      "projects": ["dalsclip"]
+      "period": "2021.09 — 2024.06",
+      "org": "中国科学院大学 · 中国科学院上海微系统与信息技术研究所",
+      "role": "电子信息 · 硕士",
+      "description": "微系统技术国家重点实验室。研究视觉语言模型与域泛化，第一作者论文发表于 Image and Vision Computing。2021.09—2022.06 在中国科学技术大学电子科学与技术系联合培养课程学习；2022.08—2024.06 在研究所开展硕士研究。",
+      "projects": ["dalsclip"],
+      "lab": "微系统技术国家重点实验室"
     },
     {
       "period": "2017 — 2021",
       "org": "上海海事大学",
-      "role": "本科 · 通信工程",
+      "role": "通信工程 · 工学学士",
       "description": "从通信与信号处理出发，逐步走向模型、系统与工程实现。",
       "projects": []
+    }
+  ],
+  "resumeSummary": "C++ / Linux 高性能系统工程背景，作为研发负责人推动无人机降落保护与多路视频编码从需求对齐、研发联调到产品上线，负责模型量化与端侧部署。电子信息硕士，具备视觉语言模型与域泛化研究经历；当前推进 LLM 推理测量、PyTorch 训练实践与 Coding Agent Runtime。",
+  "introTags": ["影石 · HPC / 项目研发负责人", "中国科学院大学 · 电子信息硕士"],
+  "focus": [
+    {
+      "title": "模型架构",
+      "level": "研究与论文研读",
+      "detail": "Transformer / Attention · CLIP / ViT · 域泛化",
+      "projects": ["dalsclip", "nanochat-lab"]
+    },
+    {
+      "title": "推理框架",
+      "level": "在研",
+      "detail": "vLLM · KV Cache · PagedAttention · Continuous Batching",
+      "projects": ["inference-lab"]
+    },
+    {
+      "title": "后训练管线",
+      "level": "计划实践",
+      "detail": "SFT → RL / GRPO → Evaluation",
+      "projects": ["nanochat-lab"]
     }
   ]
 }

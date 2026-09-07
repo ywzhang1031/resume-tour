@@ -38,6 +38,7 @@ import {
   filterProjects,
 } from '@/lib/navigation.mjs';
 import { SystemScene } from './system-scene';
+import { LandingDemo } from './landing-demo';
 
 const { profile, projects, tour } = content;
 const chapters = tour.chapters;
@@ -65,6 +66,25 @@ function ProjectLinks({ project }: { project: Project }) {
         </a>
       ))}
     </div>
+  );
+}
+
+function ProjectMilestones({ project }: { project: Project }) {
+  if (!project.milestones?.length) return null;
+  return (
+    <ol className="project-milestones" aria-label="训练管线进度">
+      {project.milestones.map((stage) => (
+        <li key={stage.label}>
+          <span
+            className={`level ${stage.status === '已完成' ? 'delivered' : ''}`}
+          >
+            {stage.status}
+          </span>
+          <strong>{stage.label}</strong>
+          <span>{stage.detail}</span>
+        </li>
+      ))}
+    </ol>
   );
 }
 
@@ -389,8 +409,9 @@ export default function ResumeTour() {
                       </p>
                       <p className="intro-description">{profile.intro}</p>
                       <div className="intro-tags">
-                        <span>影石 · HPC 工程经验</span>
-                        <span>中科院 · 硕士</span>
+                        {profile.introTags.map((tag) => (
+                          <span key={tag}>{tag}</span>
+                        ))}
                       </div>
                       <div className="intro-actions">
                         <Button
@@ -432,12 +453,14 @@ export default function ResumeTour() {
                   >
                     <div className="section-heading">
                       <div>
-                        <p className="eyebrow">TOOLS I WORK WITH</p>
+                        <p className="eyebrow">
+                          SYSTEMS · MODELS · INFRASTRUCTURE
+                        </p>
                         <h2 id="stack-title">
                           我的技术栈<span className="accent">↗</span>
                         </h2>
                       </div>
-                      <p>从技术，到实际做过的项目。</p>
+                      <p>系统交付为基础，向大模型训练与推理深入。</p>
                     </div>
                     <div className="stack-grid">
                       {profile.stack.map((group, index) => (
@@ -463,6 +486,18 @@ export default function ResumeTour() {
                             ))}
                           </ul>
                           {relatedButtons(group.projects)}
+                        </article>
+                      ))}
+                    </div>
+                    <div className="focus-grid" aria-label="模型研究与持续实践">
+                      {profile.focus.map((focus) => (
+                        <article key={focus.title}>
+                          <div>
+                            <h3>{focus.title}</h3>
+                            <span className="level">{focus.level}</span>
+                          </div>
+                          <p>{focus.detail}</p>
+                          {relatedButtons(focus.projects)}
                         </article>
                       ))}
                     </div>
@@ -527,6 +562,7 @@ export default function ResumeTour() {
                       展开项目
                     </Button>
                   </div>
+                  <ProjectMilestones project={project} />
                   <div className="step-tabs" aria-label="讲述步骤">
                     {project.steps.map((s, i) => (
                       <button
@@ -559,11 +595,15 @@ export default function ResumeTour() {
                       </p>
                     </article>
                     <div className="case-visual">
-                      <SystemScene
-                        flow={step.flow}
-                        step={location.step}
-                        enabled={motion && !reduced}
-                      />
+                      {step.illustration === 'landing-safety' ? (
+                        <LandingDemo animate={motion && !reduced} />
+                      ) : (
+                        <SystemScene
+                          flow={step.flow}
+                          step={location.step}
+                          enabled={motion && !reduced}
+                        />
+                      )}
                       {project.metric ? (
                         <div className="metric">
                           <strong>{project.metric.value}</strong>
@@ -616,20 +656,23 @@ export default function ResumeTour() {
                       <span>01 / PERFORMANCE</span>
                       <h2>性能与数据流</h2>
                       <p>
-                        端侧实时处理、零拷贝
-                        IPC、硬件卸载，以及可追溯的推理测量。
+                        C++ 低延迟管线、零拷贝 IPC、硬件卸载，以及 LLM
+                        流式推理测量。
                       </p>
                     </article>
                     <article>
                       <span>02 / RELIABILITY</span>
-                      <h2>并发与可靠性</h2>
-                      <p>有界缓存、资源生命周期、状态一致性和异常路径。</p>
+                      <h2>研发与交付闭环</h2>
+                      <p>
+                        从产品需求、架构设计到跨团队联调与上线，兼顾并发正确性和异常恢复。
+                      </p>
                     </article>
                     <article>
                       <span>03 / RUNTIME</span>
                       <h2>模型与运行时</h2>
                       <p>
-                        端侧模型集成、训练实践，以及可控的 Coding Agent 系统。
+                        地平线模型量化与 BPU 部署、PyTorch 训练实践；持续研究
+                        vLLM 与 Coding Agent Runtime。
                       </p>
                     </article>
                   </div>
@@ -863,6 +906,7 @@ export default function ResumeTour() {
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
+                <ProjectMilestones project={selected} />
                 {selected.steps.map((s, i) => (
                   <section key={s.id}>
                     <span className="eyebrow">{pad(i + 1)}</span>

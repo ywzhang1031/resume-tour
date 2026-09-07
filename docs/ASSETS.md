@@ -16,6 +16,10 @@ Generation brief:
 
 The technical scenes are original, code-generated data-flow diagrams built with Three.js. Interface icons use Lucide. System fonts are resolved locally. No intro3d models, images or source code were copied.
 
+## Landing-protection illustration
+
+`web/components/landing-demo.tsx` contains an original SVG and an eight-second, user-triggered sequence. It illustrates sensing water, publishing a protection state, and flight-controller response. It is explicitly labelled as a schematic, not flight footage or a measurement. The linked Antigravity A1 manual describes the public product behavior; no third-party video is copied or embedded.
+
 ## Resume
 
 `web/public/files/yuewen-zhang-resume.pdf` is generated from public site content, with the locally available STHeiti font embedded for Chinese text. Use your own content and appropriately licensed local font when regenerating it. The resume is intended for recruitment review, not identity reuse.
