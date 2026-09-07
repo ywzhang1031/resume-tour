@@ -6,6 +6,8 @@
 - 作者指定的 AI Agent PDF 原样复制，658,013 bytes，SHA-256：`89341d1726edc66be2d17c37ee5c6e2f7d7129475fb1e5a3a8029af5dd38ca8b`。所有简历入口通过同一配置引用。
 - 六组技术栈包含工作中的 Git、Docker、CI/CD、Gerrit 与 NVIDIA Orin；LLM 拓展方向按官方招聘资料组织，保留在研 / 计划标识。
 - 内容检查、类型检查、11 项行为测试、生产构建与 diff 检查通过；本轮未执行浏览器视觉或交互复核。
+- 第 5 版线上首页与指定 PDF 均请求成功；新文案、技术栈及 PDF 入口已核对，线上 PDF 与用户指定原件逐字节一致。
+- GitHub CI 通过：[运行记录](https://github.com/ywzhang1031/resume-tour/actions/runs/34099472582)。
 
 ## 2026-09-07 访客文案、社交链接与原始 PDF
 
