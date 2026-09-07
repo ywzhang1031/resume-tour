@@ -38,3 +38,7 @@ The active `profile.resumePdf` points to `web/public/files/yuewen-zhang-ai-agent
 ## Portrait signature font
 
 `web/public/fonts/portrait-signature.ttf` is the Google Fonts text subset of [Ma Shan Zheng](https://github.com/google/fonts/tree/main/ofl/mashanzheng) for “我有一颗勇敢的心”, served locally to preserve the signature across devices. Its SIL Open Font License is retained in `web/public/fonts/MaShanZheng-OFL.txt`. If changing the caption, refresh this subset to include the new characters; other characters fall back to a local Kai-style or cursive font.
+
+## Chinese landing-protection manual
+
+The landing project links to the official Simplified Chinese A1 user manual V2.0, dated 2026-08-13, as listed on the [official China download page](https://www.antigravity.tech/cn/downloads/antigravity-a1?tab=manual). The link uses `#page=25` for printed page 19, “降落保护”. The original official PDF was downloaded and its chapter text verified; the document is linked, not republished or machine-translated.

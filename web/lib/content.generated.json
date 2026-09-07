@@ -433,8 +433,8 @@
       ],
       "links": [
         {
-          "label": "官方手册 · 降落保护",
-          "url": "https://static.antigravity.tech/assets/a1258d3164e30372bacbcba1183c1bb9/Antigravity_A1_User%20Manual_EN_V1.0_20260224.pdf"
+          "label": "官方中文手册 · 降落保护（第 19 页）",
+          "url": "https://static.antigravity.tech/assets/a61e92353370316f5e88ba2bbbada3bf/Antigravity_A1_%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C_CHS_V2.0_20260813.pdf#page=25"
         }
       ],
       "boundary": "我负责项目研发闭环与感知侧系统实现；与飞控团队共同约定状态接口，由飞控执行降落控制。",
@@ -457,7 +457,7 @@
         "width": 960,
         "height": 540
       },
-      "markdown": "# 技术深挖：降落保护\n\n## 从立项到上线的研发责任\n\n担任项目研发负责人，从产品场景和安全需求拆解开始，负责架构设计、模块开发、模型量化与端侧部署、性能优化，并与飞控等团队完成状态接口对齐、联调和上线。感知侧输出状态与原因，飞控侧依据约定执行降落控制。\n\n## 模型量化与部署\n\n使用地平线工具链完成模型量化，负责将算法模型接入 BPU 推理链路，包括模型加载、输入输出组织、推理调用、后处理及场景验证。\n\n### 地平线 PTQ 工具链参考\n\n官方流程将模型检查、校准量化、编译和性能评估串联起来。`hb_mapper makertbin` 是量化与编译的转换工具；板端推理接口负责执行已转换的模型。\n\n以下为官方 ONNX 转换命令示例，具体项目脚本与参数以当时使用的 SDK 为准：\n\n```bash\nhb_mapper makertbin --model-type onnx --config config.yaml\n```\n\nYAML 配置涵盖 `model_parameters`、`input_parameters`、`calibration_parameters` 与 `compiler_parameters`。校准数据与模型预处理需一致；部署时还要核对 NV12 等运行时输入约定。检查转换后的精度表现与板端耗时，才能判断模型是否满足应用要求。\n\n参考：[X5 PTQ 官方流程](https://developer.d-robotics.cc/rdk_x_doc/en/Advanced_development/toolchain_development/intermediate/ptq_process)、[地平线 YAML 配置说明](https://developer.horizon.auto/blog/10375)。\n\n## 100 ms 与实时预算\n\n100 ms 是多传感器帧配对的容差。它取决于传感器延迟分布、匹配成功率和飞机运动速度。它不能替代时间戳基准的统一，也不代表从输入到飞控的端到端延迟。\n\n## epoch 如何防止旧结果\n\n1. 本轮处理开始时记录版本，例如 `epoch = 7`。\n2. 用户取消降落，重置状态，版本推进至 `8`。\n3. 旧帧算法返回后发现 `7 != 8`，丢弃结果。\n\n共享缓冲区仍通过 mutex 保护，频繁读取的标志通过 atomic 管理。版本校验与结果发布之间的并发边界同样需要受控；这不是整个系统无锁的保证。\n\n## 实时优化\n\n直接使用 NV12 模型输入，减少颜色空间转换；将图像保存移出主回调；用飞行模式、高度与动态频率门控减少不必要推理。使用分段计时区分 buffer 操作、算法与其他耗时。\n\n## 场景展示\n\n导览中的 8 秒动画是对降落保护决策流程的示意，不是实飞录像。官方手册的 Landing Protection 章节说明了检测到不适宜地面或水面后暂停降落、悬停并等待用户输入的产品行为。实际可用性取决于环境与飞行状态。\n",
+      "markdown": "# 技术深挖：降落保护\n\n## 从立项到上线的研发责任\n\n担任项目研发负责人，从产品场景和安全需求拆解开始，负责架构设计、模块开发、模型量化与端侧部署、性能优化，并与飞控等团队完成状态接口对齐、联调和上线。感知侧输出状态与原因，飞控侧依据约定执行降落控制。\n\n## 模型量化与部署\n\n使用地平线工具链完成模型量化，负责将算法模型接入 BPU 推理链路，包括模型加载、输入输出组织、推理调用、后处理及场景验证。\n\n### 地平线 PTQ 工具链参考\n\n官方流程将模型检查、校准量化、编译和性能评估串联起来。`hb_mapper makertbin` 是量化与编译的转换工具；板端推理接口负责执行已转换的模型。\n\n以下为官方 ONNX 转换命令示例，具体项目脚本与参数以当时使用的 SDK 为准：\n\n```bash\nhb_mapper makertbin --model-type onnx --config config.yaml\n```\n\nYAML 配置涵盖 `model_parameters`、`input_parameters`、`calibration_parameters` 与 `compiler_parameters`。校准数据与模型预处理需一致；部署时还要核对 NV12 等运行时输入约定。检查转换后的精度表现与板端耗时，才能判断模型是否满足应用要求。\n\n参考：[X5 PTQ 官方流程](https://developer.d-robotics.cc/rdk_x_doc/en/Advanced_development/toolchain_development/intermediate/ptq_process)、[地平线 YAML 配置说明](https://developer.horizon.auto/blog/10375)。\n\n## 100 ms 与实时预算\n\n100 ms 是多传感器帧配对的容差。它取决于传感器延迟分布、匹配成功率和飞机运动速度。它不能替代时间戳基准的统一，也不代表从输入到飞控的端到端延迟。\n\n## epoch 如何防止旧结果\n\n1. 本轮处理开始时记录版本，例如 `epoch = 7`。\n2. 用户取消降落，重置状态，版本推进至 `8`。\n3. 旧帧算法返回后发现 `7 != 8`，丢弃结果。\n\n共享缓冲区仍通过 mutex 保护，频繁读取的标志通过 atomic 管理。版本校验与结果发布之间的并发边界同样需要受控；这不是整个系统无锁的保证。\n\n## 实时优化\n\n直接使用 NV12 模型输入，减少颜色空间转换；将图像保存移出主回调；用飞行模式、高度与动态频率门控减少不必要推理。使用分段计时区分 buffer 操作、算法与其他耗时。\n\n## 场景展示\n\n导览中的 8 秒动画是对降落保护决策流程的示意，不是实飞录像。官方简体中文手册 V2.0 第 19 页（PDF 第 25 页）的“降落保护”章节说明了检测到不适宜地面或水面后暂停降落、悬停并等待用户输入的产品行为。实际可用性取决于环境与飞行状态。\n",
       "relatedProjects": []
     },
     {
