@@ -1,0 +1,37 @@
+{
+  "id": "dsh-aside",
+  "title": "DSH Aside",
+  "subtitle": "主线继续，旁路问题有自己的空间。",
+  "category": "Coding Agent",
+  "status": "已发布版本",
+  "visibility": "visible",
+  "order": 50,
+  "role": "独立开发 Host / UI 插件并发布 npm 包",
+  "tags": ["TypeScript", "React", "DSH", "插件协议", "npm"],
+  "summary": "为 DeepSeek Harness 提供锚定选中文本的旁路对话，保留主线思路，支持独立历史与分支。",
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "把顺手的交互做成可安装插件",
+      "body": "连接 Host 与 UI，让旁路问题携带选区上下文，并独立组织后续对话。",
+      "points": [
+        "选区锚定与侧栏问答",
+        "独立会话与历史分支",
+        "封装为可安装 npm 包，验证干净环境安装"
+      ],
+      "flow": ["选中上下文", "Aside UI", "Host 插件", "独立历史"]
+    }
+  ],
+  "links": [
+    {
+      "label": "GitHub · 安装与演示",
+      "url": "https://github.com/ywzhang1031/dsh-aside"
+    },
+    {
+      "label": "npm · dsh-aside",
+      "url": "https://www.npmjs.com/package/dsh-aside"
+    }
+  ],
+  "boundary": "v0.1.0 已发布；宿主兼容范围与安装步骤以仓库说明为准。",
+  "scene": "pipeline"
+}

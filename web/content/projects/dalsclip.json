@@ -1,0 +1,33 @@
+{
+  "id": "dalsclip",
+  "title": "DALSCLIP",
+  "subtitle": "让视觉语言模型适应未见过的域。",
+  "category": "研究",
+  "status": "已发表",
+  "visibility": "visible",
+  "order": 60,
+  "role": "第一作者 · 方法与实验研究",
+  "tags": ["CLIP", "PyTorch", "Domain Generalization", "Prompt Learning"],
+  "summary": "围绕 CLIP 的域泛化开展提示学习研究，将可学习映射与域不变表征结合。",
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "从研究问题到方法与实验",
+      "body": "关注训练域和测试域存在分布变化时，视觉语言模型如何保持泛化能力。",
+      "points": [
+        "基于 CLIP 的视觉语言表征",
+        "提示映射与域不变学习",
+        "发表于 Image and Vision Computing（2025）"
+      ],
+      "flow": ["训练域", "CLIP 表征", "提示与域不变学习", "未见域评估"]
+    }
+  ],
+  "links": [
+    {
+      "label": "论文 · Image and Vision Computing",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0262885624004645"
+    }
+  ],
+  "boundary": "性能结论应对应论文中的数据集、基线和评价协议。",
+  "scene": "pipeline"
+}

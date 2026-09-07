@@ -1,46 +1,65 @@
 # Resume Tour
 
-An open-source personal website for presenting your experience, projects, and technical work during interviews.
+An open-source personal website for presenting experience, projects and technical work during interviews.
 
-[简体中文](README.zh-CN.md) · [Design plan](docs/DESIGN.zh-CN.md) · [Roadmap](docs/ROADMAP.zh-CN.md)
+[简体中文](README.zh-CN.md) · [Content guide](docs/CONTENT.zh-CN.md) · [Design](docs/DESIGN.zh-CN.md)
 
-## Project status
+## What works
 
-**Planning stage.** This repository currently contains the agreed product requirements and development plan. There is no runnable application or deployed demo yet. Features below are planned, not implemented.
+- A guided interview with chapters, individual steps, arrow keys, progress and fullscreen.
+- An introduction with grouped technology stacks, each linked to concrete projects.
+- A searchable project library with category and delivery-status filters.
+- Expandable technical notes with stable links and return-to-step behavior.
+- Optional Three.js data-flow scenes, static fallback and reduced-motion support.
+- A printable resume and a concise, downloadable two-page PDF.
+- File-based content, stable IDs, reference validation, ordering and visibility controls.
 
-## The idea
+The current content is Yuewen Zhang's AI Infra / Coding Agent portfolio. The site is implemented with React, TypeScript, Vinext, shadcn/Base UI and Three.js. Its stylized portrait is a raster image; the technical data-flow scenes use WebGL.
 
-A personal website should work both as a portfolio that visitors explore and as a presentation that its owner can guide through an interview. Resume Tour will use the same content for both experiences.
+## Run locally
 
-The guided experience will combine chapter navigation, optional 3D scenes, readable diagrams, and expandable technical explanations. A presenter should be able to follow a prepared sequence, answer a question in depth, and return to the same point.
+Requires Node.js 22.13 or newer.
 
-The initial use case is an AI infrastructure engineer's portfolio, with systems engineering experience, inference and training experiments, research, and coding-agent projects. The reusable structure should also accommodate other professions.
+```sh
+cd web
+npm ci
+npm run dev -- --host 127.0.0.1 --port 4173
+```
 
-## Planned experience
+Open `http://localhost:4173`. Stop with Ctrl-C. If the port is occupied, use `--port 4174`.
 
-- **Browse:** explore a profile, work experience, projects, research, and contact links.
-- **Present:** advance through an interview narrative with keyboard controls, a chapter menu, progress, and full-screen presentation.
-- **Explain:** expand architecture diagrams, experiments, implementation decisions, and evidence without losing the current chapter.
-- **Maintain:** create, find, edit, reorder, hide, or archive projects through structured content files.
-- **Customize:** adjust profile data, presentation routes, themes, and scenes independently.
-- **Fall back:** retain complete readable content when 3D or motion is unavailable or disabled.
+```sh
+npm run content:check
+npm run typecheck
+npm test
+npm run build
+npm start -- --port 4175
+```
 
-## Content-first architecture
+`npm start` serves the production Worker locally through Wrangler. All instructions run from `web/`.
 
-Project content, presentation order, scene selection, and theme settings will be separate concerns. Stable IDs will connect them.
+## Customize
 
-Adding a project should require content and assets, not a new page component or custom 3D model. A project without a custom scene will receive a default presentation. A later visual editor should use the same content format.
+| Change | File |
+| --- | --- |
+| Profile, stacks and experience | `web/content/profile.json` |
+| Add or edit a project | `web/content/projects/<stable-id>.json` |
+| Technical detail | `web/content/notes/<name>.md` |
+| Interview sequence | `web/content/tour.json` |
+| Concise PDF selection | `web/content/resume.json` |
+| Colors and layout | `web/app/globals.css` |
+| Default technical scene | `web/components/system-scene.tsx` |
 
-The initial content workflow will use Markdown and structured configuration under Git. The exact framework and file schema are not selected yet.
+Copy `web/examples/project.json` to add a project. No page or scene code is needed. Content edits regenerate the public manifest during development and build. Hidden, archived and draft entries are omitted from the website; they remain readable in this public source repository. Do not use visibility as a privacy mechanism.
 
-## Design reference
+See the [content guide](docs/CONTENT.zh-CN.md) for adding, removing, renaming and regenerating the PDF. Online editing and offline installation are not implemented.
 
-[intro3d](https://intro3d.com/) is a reference for chapter-based navigation and camera transitions. Resume Tour is an independent project; the reference does not grant permission to copy its source code, models, images, or branding.
+## Deployment
 
-## Contributing
+The generated build is a Cloudflare-compatible Worker plus local static assets. The current Sites project is identified in `web/.openai/hosting.json`. Forks must register their own hosting project before deploying; do not reuse the original project's ID. Credentials are never stored in this repository. CI validates content, types, behavior and builds; it does not deploy automatically.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Early contributions should focus on the content model, interview flow, accessibility, or a bounded implementation proposal. Setup and deployment instructions will be added with the first working prototype.
+## Reference and license
 
-## License
+[intro3d](https://intro3d.com/) inspired the chapter navigation and camera transitions. This is an independent implementation.
 
-Code and original project documentation are available under the [MIT License](LICENSE). Third-party materials retain their respective licenses. Personal portraits, resumes, and other contributed media need explicit reuse terms before being distributed as template assets.
+Code and original documentation: [MIT](LICENSE). The author's personal content, portrait and resume are not reusable template identities. Replace them before publishing your own site. See [asset provenance](docs/ASSETS.md).

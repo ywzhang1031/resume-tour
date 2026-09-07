@@ -1,0 +1,24 @@
+{
+  "id": "example-project",
+  "title": "Example project",
+  "subtitle": "A short, concrete result.",
+  "category": "Personal work",
+  "status": "开发中",
+  "visibility": "draft",
+  "order": 100,
+  "role": "Your own contribution",
+  "summary": "The problem, the audience and the outcome.",
+  "tags": ["Python"],
+  "steps": [
+    {
+      "id": "overview",
+      "title": "The problem",
+      "body": "Explain the constraints and your approach.",
+      "points": ["One verified result"],
+      "flow": ["Input", "Processing", "Output"]
+    }
+  ],
+  "links": [],
+  "boundary": "State the environment and current scope.",
+  "relatedProjects": []
+}

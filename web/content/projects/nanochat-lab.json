@@ -1,0 +1,44 @@
+{
+  "id": "nanochat-lab",
+  "title": "nanochat 训练实践",
+  "subtitle": "沿着训练链路，理解成本与约束。",
+  "category": "AI Infra",
+  "status": "阶段实验完成",
+  "visibility": "visible",
+  "order": 30,
+  "role": "基于上游框架的单设备训练实践",
+  "tags": ["PyTorch", "Python", "MPS", "Dense GPT", "Pretraining"],
+  "summary": "在 Apple Silicon 上运行 Dense GPT 基础训练，观察批量、序列长度和梯度累积如何影响训练过程。",
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "让完整训练链路跑起来",
+      "body": "基于 Karpathy 的 nanochat，完成 d6 与 d12 Dense GPT 的单设备基础训练 checkpoint。",
+      "points": [
+        "每个实验完成 5,000 步",
+        "每步全局约 16,384 tokens，即各约 81.92M 训练 tokens",
+        "d6 序列长度 2,048；d12 为 512"
+      ],
+      "flow": ["数据与分词", "批量 / 累积", "前向与反向", "Checkpoint"]
+    },
+    {
+      "id": "step-2",
+      "title": "实验结果，要连同条件一起解释",
+      "body": "记录训练配置和 checkpoint，避免把不同上下文长度的实验直接当作受控 scaling 对比。",
+      "points": [
+        "硬件为 Apple Silicon / MPS",
+        "基于上游项目，不作为原创训练框架",
+        "SFT / GRPO 尚未形成完成结果"
+      ],
+      "flow": ["训练配置", "计算预算", "实验记录", "明确边界"]
+    }
+  ],
+  "links": [
+    {
+      "label": "上游 · Karpathy/nanochat",
+      "url": "https://github.com/karpathy/nanochat"
+    }
+  ],
+  "boundary": "实验范围：基于上游 nanochat，在 Apple Silicon / MPS 上进行单设备 Dense GPT 基础训练。",
+  "scene": "pipeline"
+}

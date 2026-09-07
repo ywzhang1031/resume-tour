@@ -1,9 +1,9 @@
 # Contributing
 
-Resume Tour is currently in the planning stage. Please read the [README](README.md), [design plan](docs/DESIGN.zh-CN.md), and [roadmap](docs/ROADMAP.zh-CN.md) before proposing implementation work.
+Keep changes focused on a concrete interview or maintenance workflow. Describe the problem, resulting behavior and relevant validation.
 
-Keep changes focused and explain the user-facing problem, the proposed behavior, and how it can be checked. For changes to the content model, include an example of adding or editing a project and describe how existing content would remain valid.
+Start with the [README](README.md) and [content guide](docs/CONTENT.zh-CN.md). Run `npm ci`, `npm run content:check`, `npm run typecheck`, `npm test` and `npm run build` from `web/`.
 
-Do not commit credentials, private source documents, or assets without appropriate reuse rights. Use clearly labeled sample data for reusable examples.
+For content-model changes, exercise adding a project, renaming without changing its ID, hiding it and deleting referenced content. Extend the reference checks for new relations. For presentation changes, verify keyboard access, detail-panel return behavior and a narrow viewport. All essential text must remain usable without WebGL.
 
-Implementation contributions should include relevant validation. A documentation-only change can be checked for working links, accurate feature status, and consistency with the current plan. Development and test commands will be documented when the application exists.
+Do not commit credentials, private source documents or raw agent traces. Use `web/examples/project.json` for reusable examples. Personal portraits and resume content are excluded from the template's reuse permission; see [ASSETS.md](docs/ASSETS.md).

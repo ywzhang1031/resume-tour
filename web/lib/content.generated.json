@@ -1,0 +1,722 @@
+{
+  "profile": {
+    "name": "张跃文",
+    "englishName": "Yuewen Zhang",
+    "role": "AI Infra / Systems Engineer",
+    "email": "z15000675672@gmail.com",
+    "github": "https://github.com/ywzhang1031",
+    "intro": "从端侧实时系统，到 LLM Infra。\n我关心计算的延迟、数据的流动，\n以及系统在真实场景中的可靠性。",
+    "portrait": "/images/yuewen-portrait.png",
+    "updated": "2026-09-07",
+    "stack": [
+      {
+        "id": "systems",
+        "title": "系统工程",
+        "level": "工作交付",
+        "summary": "并发、数据流与资源管理",
+        "tags": [
+          "C++",
+          "Linux",
+          "多线程 / atomic / mutex",
+          "iceoryx · 零拷贝 IPC",
+          "RAII / 环形缓冲区"
+        ],
+        "projects": [
+          "landing-protection",
+          "video-pipeline"
+        ]
+      },
+      {
+        "id": "edge",
+        "title": "端侧 AI 与视觉",
+        "level": "工作交付",
+        "summary": "把模型接入受限算力的实时系统",
+        "tags": [
+          "Horizon X5M / BPU",
+          "NV12 / YUV",
+          "OpenCV",
+          "H.265 硬件编码",
+          "模型 I/O 与后处理"
+        ],
+        "projects": [
+          "landing-protection",
+          "video-pipeline"
+        ]
+      },
+      {
+        "id": "llm",
+        "title": "LLM Infra",
+        "level": "项目实践",
+        "summary": "推理测量与单设备训练实践",
+        "tags": [
+          "Python / PyTorch",
+          "HTTP / SSE",
+          "TTFT / TPOT",
+          "负载生成与指标校验",
+          "Apple Silicon / MPS"
+        ],
+        "projects": [
+          "inference-lab",
+          "nanochat-lab"
+        ]
+      },
+      {
+        "id": "agents",
+        "title": "Coding Agent",
+        "level": "项目实践",
+        "summary": "可控运行时、插件与执行轨迹",
+        "tags": [
+          "TypeScript / React",
+          "工具协议与权限",
+          "JSONL / 事件回放",
+          "Context / Compaction",
+          "DSH 插件"
+        ],
+        "projects": [
+          "my-agent",
+          "dsh-aside",
+          "trajectory-vault"
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "period": "2024.07 — 2026.06",
+        "org": "影石 Insta360 · Antigravity",
+        "role": "感知导航 · 高性能计算工程师",
+        "description": "负责无人机降落保护与多路视频编码模块，将 AI 视觉、多源传感器与硬件能力接入实时系统。",
+        "projects": [
+          "landing-protection",
+          "video-pipeline"
+        ]
+      },
+      {
+        "period": "2021 — 2024",
+        "org": "中国科学院 · 上海微系统所",
+        "role": "硕士 · 域泛化与视觉语言模型",
+        "description": "围绕 CLIP 的域泛化开展研究。2021—2022 年在中国科学技术大学联合培养课程阶段，2024 年硕士毕业。",
+        "projects": [
+          "dalsclip"
+        ]
+      },
+      {
+        "period": "2017 — 2021",
+        "org": "上海海事大学",
+        "role": "本科 · 通信工程",
+        "description": "从通信与信号处理出发，逐步走向模型、系统与工程实现。",
+        "projects": []
+      }
+    ]
+  },
+  "tour": {
+    "title": "从实时系统到 AI Infra",
+    "chapters": [
+      {
+        "id": "intro",
+        "title": "我是谁",
+        "kind": "intro",
+        "duration": "45 秒"
+      },
+      {
+        "id": "journey",
+        "title": "经历与方向",
+        "kind": "journey",
+        "duration": "45 秒"
+      },
+      {
+        "id": "landing-protection",
+        "project": "landing-protection",
+        "title": "降落保护",
+        "kind": "project",
+        "duration": "2 分钟"
+      },
+      {
+        "id": "video-pipeline",
+        "project": "video-pipeline",
+        "title": "视频编码",
+        "kind": "project",
+        "duration": "1 分钟"
+      },
+      {
+        "id": "inference-lab",
+        "project": "inference-lab",
+        "title": "LLM Infra",
+        "kind": "project",
+        "duration": "1 分钟"
+      },
+      {
+        "id": "nanochat-lab",
+        "project": "nanochat-lab",
+        "title": "训练实践",
+        "kind": "project",
+        "duration": "45 秒"
+      },
+      {
+        "id": "my-agent",
+        "project": "my-agent",
+        "title": "Coding Agent",
+        "kind": "project",
+        "duration": "45 秒"
+      },
+      {
+        "id": "dalsclip",
+        "project": "dalsclip",
+        "title": "研究经历",
+        "kind": "project",
+        "duration": "30 秒"
+      },
+      {
+        "id": "next",
+        "title": "下一站",
+        "kind": "closing",
+        "duration": "30 秒"
+      }
+    ],
+    "duration": "约 8 分钟"
+  },
+  "projects": [
+    {
+      "id": "landing-protection",
+      "title": "无人机降落保护",
+      "subtitle": "把实时感知，变成可靠的安全判断。",
+      "category": "工作交付",
+      "status": "已交付",
+      "visibility": "visible",
+      "order": 0,
+      "role": "降落保护模块开发与端侧模型集成",
+      "tags": [
+        "C++",
+        "Linux",
+        "iceoryx",
+        "NV12",
+        "多传感器融合",
+        "并发"
+      ],
+      "summary": "融合视觉、深度、ToF 与导航数据，识别水面、不适宜地形和障碍物，为飞控提供降落保护状态。",
+      "steps": [
+        {
+          "id": "step-1",
+          "title": "先判断：这里能不能降落？",
+          "body": "在自动或手动降落过程中，把多源感知结果组织为飞控可消费的状态和原因。",
+          "points": [
+            "水体分割：按水面占比动态调整检测频率",
+            "近地场景分类：在 1.5 m 以下识别地形",
+            "距离感知：结合深度、姿态和导航数据"
+          ],
+          "flow": [
+            "双目 / 深度 / ToF",
+            "时间对齐",
+            "模型推理与融合",
+            "状态 + reason"
+          ]
+        },
+        {
+          "id": "step-2",
+          "title": "让不同节奏的数据对齐",
+          "body": "使用有界环形缓冲区保存近期帧，以主传感器时间戳寻找最近邻数据，剔除超出容差的配对。",
+          "points": [
+            "不同传感器独立缓存，定期清理过期数据",
+            "100 ms 是配对容差，不是算法运行耗时",
+            "需要先处理时钟基准，匹配只对可比较时间戳有效"
+          ],
+          "flow": [
+            "传感器帧",
+            "有界 Buffer",
+            "最近邻匹配",
+            "有效数据组"
+          ]
+        },
+        {
+          "id": "step-3",
+          "title": "模式变了，旧结果就不能再生效",
+          "body": "用细粒度锁保护共享数据，用 epoch 版本检查阻止跨模式的过期结果继续发布。",
+          "points": [
+            "模式重置时递增 epoch，处理前后核对版本",
+            "弱光时输出 Invalid 与原因，避免错误视觉判断",
+            "NV12 直接输入、高度门控、异步保存减少主链路开销"
+          ],
+          "flow": [
+            "读取 epoch",
+            "执行算法",
+            "检查当前版本",
+            "发布 / 丢弃"
+          ]
+        }
+      ],
+      "links": [],
+      "boundary": "本人负责系统模块与端侧集成；模型量化、编译产物由算法同事提供。",
+      "scene": "pipeline",
+      "metric": {
+        "value": "< 20 ms",
+        "label": "优化后的单帧处理记录",
+        "detail": "项目指定工况测试记录：单帧约 50–60 ms → 20 ms 以内。耗时口径为模块单帧处理。"
+      },
+      "note": "landing-protection.md",
+      "markdown": "# 技术深挖：降落保护\n\n## 100 ms 与实时预算\n\n100 ms 是多传感器帧配对的容差。它取决于传感器延迟分布、匹配成功率和飞机运动速度。它不能替代时间戳基准的统一，也不代表从输入到飞控的端到端延迟。\n\n## epoch 如何防止旧结果\n\n1. 本轮处理开始时记录版本，例如 `epoch = 7`。\n2. 用户取消降落，重置状态，版本推进至 `8`。\n3. 旧帧算法返回后发现 `7 != 8`，丢弃结果。\n\n共享缓冲区仍通过 mutex 保护，频繁读取的标志通过 atomic 管理。版本校验与结果发布之间的并发边界同样需要受控；这不是整个系统无锁的保证。\n\n## 实时优化\n\n直接使用 NV12 模型输入，减少颜色空间转换；将图像保存移出主回调；用飞行模式、高度与动态频率门控减少不必要推理。使用分段计时区分 buffer 操作、算法与其他耗时。\n\n## 个人职责\n\n负责模块开发、数据组织、模型加载与 I/O、推理调用、后处理和验证。量化和编译的模型文件来自算法团队。飞控消费状态并执行降落策略。\n",
+      "relatedProjects": []
+    },
+    {
+      "id": "video-pipeline",
+      "title": "多路视频编码系统",
+      "subtitle": "有限的算力，持续流动的图像。",
+      "category": "工作交付",
+      "status": "已交付",
+      "visibility": "visible",
+      "order": 10,
+      "role": "硬件编码封装、通道生命周期与录制逻辑",
+      "tags": [
+        "C++",
+        "H.265",
+        "Horizon X5M",
+        "NV12",
+        "RAII",
+        "iceoryx"
+      ],
+      "summary": "将多类型传感器图像按需接入硬件编码，支持循环录制、事故片段保护和实时码流发布。",
+      "steps": [
+        {
+          "id": "step-1",
+          "title": "让不同图像走进同一条管线",
+          "body": "订阅层兼容 13 类输入，预处理层处理格式、对齐、双目拼接与深度可视化。",
+          "points": [
+            "按配置启用通道，避免所有编码器常驻",
+            "BGR → NV12、宽度对齐与双目拼接",
+            "硬件编码卸载主要编码计算，CPU 仍负责组织与 I/O"
+          ],
+          "flow": [
+            "图像订阅",
+            "格式与对齐",
+            "H.265 硬件编码",
+            "存储 / IPC"
+          ]
+        },
+        {
+          "id": "step-2",
+          "title": "把底层 API 变成可管理的资源",
+          "body": "封装编码器初始化、输入输出队列及回收过程，使每个通道具有清晰的资源生命周期。",
+          "points": [
+            "Init / Encode 封装底层调用顺序",
+            "RAII 析构释放资源；配置驱动创建和销毁",
+            "原子 enable 标志控制回调是否执行编码"
+          ],
+          "flow": [
+            "按需创建",
+            "输入 Buffer",
+            "编码 / 输出",
+            "归还 / 释放"
+          ]
+        },
+        {
+          "id": "step-3",
+          "title": "数据持续记录，关键片段留下",
+          "body": "循环写入固定时间片，碰撞事件保护相关片段，地面站指令动态选择预览通道。",
+          "points": [
+            "默认 5 个片段，总录制窗口 5 分钟",
+            "最多保护 3 个事故相关片段",
+            "工作模式变化时暂停不需要的通道"
+          ],
+          "flow": [
+            "循环片段",
+            "碰撞事件",
+            "保护片段",
+            "回放 / 预览"
+          ]
+        }
+      ],
+      "links": [],
+      "boundary": "事故片段保护是覆盖策略，不等同于断电后的文件完整性保证。",
+      "scene": "pipeline",
+      "metric": {
+        "value": "13 类",
+        "label": "兼容的图像输入",
+        "detail": "按配置启用编码通道，覆盖双目、主摄、全景与深度可视化等输入类型。"
+      },
+      "note": "video-pipeline.md",
+      "markdown": "# 技术深挖：编码与生命周期\n\n## 一次编码调用\n\n从硬件队列取输入缓冲区，填充并提交图像；取出编码输出，交给存储或发布链路，然后归还输出缓冲区。异常路径也必须归还已获取资源。\n\n## 为什么按需创建\n\n不同传感器组合并不总是同时使用。将配置与通道实例关联，配合运行模式和预览指令管理生命周期，控制资源占用。\n\n## 循环录制与事故保护\n\n默认五个时间片构成五分钟窗口。覆盖最旧的未保护片段；碰撞事件将相关片段置为受保护，最多保护三片。此机制解决逻辑覆盖问题，断电一致性需要额外的文件系统与持久化设计。\n",
+      "relatedProjects": []
+    },
+    {
+      "id": "inference-lab",
+      "title": "LLM Inference Systems Lab",
+      "subtitle": "先把性能测准，再讨论优化。",
+      "category": "AI Infra",
+      "status": "开发中",
+      "visibility": "visible",
+      "order": 20,
+      "role": "独立设计负载、测量协议与分析流程",
+      "tags": [
+        "Python",
+        "HTTP",
+        "SSE",
+        "TTFT",
+        "TPOT",
+        "Benchmark"
+      ],
+      "summary": "构建可追溯的 LLM 推理测量工具，明确请求边界、流式输出语义、错误统计与延迟指标。",
+      "steps": [
+        {
+          "id": "step-1",
+          "title": "从请求记录开始",
+          "body": "围绕原始请求记录建立测量链路，而不是只输出一组无法解释的吞吐数字。",
+          "points": [
+            "区分首 token、逐 token 与端到端延迟",
+            "错误请求单独统计，保留原始测量记录",
+            "优先使用服务端 usage，避免将 SSE 事件数当成 token 数"
+          ],
+          "flow": [
+            "负载定义",
+            "请求执行",
+            "流式记录",
+            "指标分析"
+          ]
+        },
+        {
+          "id": "step-2",
+          "title": "区分客户端排队与服务端耗时",
+          "body": "已建立闭环测量基线；继续推进 open-loop、HTTP 链路与时间字段校验。",
+          "points": [
+            "scheduled_at：计划到达时刻",
+            "submitted_at：实际提交时刻",
+            "两者差值用于识别客户端调度滞后"
+          ],
+          "flow": [
+            "计划到达",
+            "调度 / 排队",
+            "实际提交",
+            "首 token / 完成"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "GitHub · 公开基线",
+          "url": "https://github.com/ywzhang1031/llm-inference-systems-lab"
+        }
+      ],
+      "boundary": "当前环境：Apple Silicon；重点验证协议与指标。公开版为闭环基线，Open-loop 与 HTTP 链路正在迭代。",
+      "scene": "pipeline",
+      "note": "inference-lab.md",
+      "markdown": "# 测量边界\n\n## 已完成与正在做\n\n公开仓库提供闭环测量基线。工作区正在推进 open-loop、HTTP 流式客户端及时间字段一致性；公开版本与本地进度可能不同。\n\n## 为什么不是数 SSE 分片\n\n网络分片和流式事件可以合并或拆分模型输出。事件数量不等于生成 token 数，需要使用服务端 usage 或有明确语义的计数来源。\n\n## 下一步\n\n完善调度滞后与错误路径的验证，再在受控 NVIDIA 环境开展性能实验，固定模型、硬件、软件版本、请求分布与推理参数。\n",
+      "relatedProjects": []
+    },
+    {
+      "id": "nanochat-lab",
+      "title": "nanochat 训练实践",
+      "subtitle": "沿着训练链路，理解成本与约束。",
+      "category": "AI Infra",
+      "status": "阶段实验完成",
+      "visibility": "visible",
+      "order": 30,
+      "role": "基于上游框架的单设备训练实践",
+      "tags": [
+        "PyTorch",
+        "Python",
+        "MPS",
+        "Dense GPT",
+        "Pretraining"
+      ],
+      "summary": "在 Apple Silicon 上运行 Dense GPT 基础训练，观察批量、序列长度和梯度累积如何影响训练过程。",
+      "steps": [
+        {
+          "id": "step-1",
+          "title": "让完整训练链路跑起来",
+          "body": "基于 Karpathy 的 nanochat，完成 d6 与 d12 Dense GPT 的单设备基础训练 checkpoint。",
+          "points": [
+            "每个实验完成 5,000 步",
+            "每步全局约 16,384 tokens，即各约 81.92M 训练 tokens",
+            "d6 序列长度 2,048；d12 为 512"
+          ],
+          "flow": [
+            "数据与分词",
+            "批量 / 累积",
+            "前向与反向",
+            "Checkpoint"
+          ]
+        },
+        {
+          "id": "step-2",
+          "title": "实验结果，要连同条件一起解释",
+          "body": "记录训练配置和 checkpoint，避免把不同上下文长度的实验直接当作受控 scaling 对比。",
+          "points": [
+            "硬件为 Apple Silicon / MPS",
+            "基于上游项目，不作为原创训练框架",
+            "SFT / GRPO 尚未形成完成结果"
+          ],
+          "flow": [
+            "训练配置",
+            "计算预算",
+            "实验记录",
+            "明确边界"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "上游 · Karpathy/nanochat",
+          "url": "https://github.com/karpathy/nanochat"
+        }
+      ],
+      "boundary": "实验范围：基于上游 nanochat，在 Apple Silicon / MPS 上进行单设备 Dense GPT 基础训练。",
+      "scene": "pipeline",
+      "relatedProjects": []
+    },
+    {
+      "id": "my-agent",
+      "title": "My Agent",
+      "subtitle": "一个可以解释、控制和回放的运行时。",
+      "category": "Coding Agent",
+      "status": "开发中",
+      "visibility": "visible",
+      "order": 40,
+      "role": "独立实现轻量 Agent 运行时",
+      "tags": [
+        "Python",
+        "工具协议",
+        "权限控制",
+        "JSONL",
+        "Context"
+      ],
+      "summary": "围绕工具执行、权限审批、上下文管理与结构化事件，搭建小而可理解的 Agent 执行系统。",
+      "steps": [
+        {
+          "id": "step-1",
+          "title": "让每一次行动有清晰边界",
+          "body": "将模型调用、工具执行与权限策略分层，让运行流程可检查、可中断。",
+          "points": [
+            "受约束的工具参数与执行入口",
+            "Plan / Build 模式与审批流程",
+            "处理中断、恢复与上下文压缩"
+          ],
+          "flow": [
+            "用户 / 模型",
+            "运行时",
+            "权限与工具",
+            "执行结果"
+          ]
+        },
+        {
+          "id": "step-2",
+          "title": "从对话文本走向结构化事件",
+          "body": "用带类型的事件描述一次执行；本地推进 JSONL 持久化和事件回放，便于调试和后续分析。",
+          "points": [
+            "把控制命令与执行事件区分开",
+            "持久化事件支持查看和回放",
+            "事件回放不等同于崩溃后的进程恢复"
+          ],
+          "flow": [
+            "执行事件",
+            "JSONL",
+            "回放 / 检查",
+            "上下文整理"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "GitHub · My Agent",
+          "url": "https://github.com/ywzhang1031/my-agent"
+        }
+      ],
+      "boundary": "公开仓库提供运行时基线，结构化事件与回放能力持续在本地迭代。",
+      "scene": "pipeline",
+      "relatedProjects": [
+        "dsh-aside",
+        "trajectory-vault"
+      ]
+    },
+    {
+      "id": "dsh-aside",
+      "title": "DSH Aside",
+      "subtitle": "主线继续，旁路问题有自己的空间。",
+      "category": "Coding Agent",
+      "status": "已发布版本",
+      "visibility": "visible",
+      "order": 50,
+      "role": "独立开发 Host / UI 插件并发布 npm 包",
+      "tags": [
+        "TypeScript",
+        "React",
+        "DSH",
+        "插件协议",
+        "npm"
+      ],
+      "summary": "为 DeepSeek Harness 提供锚定选中文本的旁路对话，保留主线思路，支持独立历史与分支。",
+      "steps": [
+        {
+          "id": "step-1",
+          "title": "把顺手的交互做成可安装插件",
+          "body": "连接 Host 与 UI，让旁路问题携带选区上下文，并独立组织后续对话。",
+          "points": [
+            "选区锚定与侧栏问答",
+            "独立会话与历史分支",
+            "封装为可安装 npm 包，验证干净环境安装"
+          ],
+          "flow": [
+            "选中上下文",
+            "Aside UI",
+            "Host 插件",
+            "独立历史"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "GitHub · 安装与演示",
+          "url": "https://github.com/ywzhang1031/dsh-aside"
+        },
+        {
+          "label": "npm · dsh-aside",
+          "url": "https://www.npmjs.com/package/dsh-aside"
+        }
+      ],
+      "boundary": "v0.1.0 已发布；宿主兼容范围与安装步骤以仓库说明为准。",
+      "scene": "pipeline",
+      "relatedProjects": []
+    },
+    {
+      "id": "dalsclip",
+      "title": "DALSCLIP",
+      "subtitle": "让视觉语言模型适应未见过的域。",
+      "category": "研究",
+      "status": "已发表",
+      "visibility": "visible",
+      "order": 60,
+      "role": "第一作者 · 方法与实验研究",
+      "tags": [
+        "CLIP",
+        "PyTorch",
+        "Domain Generalization",
+        "Prompt Learning"
+      ],
+      "summary": "围绕 CLIP 的域泛化开展提示学习研究，将可学习映射与域不变表征结合。",
+      "steps": [
+        {
+          "id": "step-1",
+          "title": "从研究问题到方法与实验",
+          "body": "关注训练域和测试域存在分布变化时，视觉语言模型如何保持泛化能力。",
+          "points": [
+            "基于 CLIP 的视觉语言表征",
+            "提示映射与域不变学习",
+            "发表于 Image and Vision Computing（2025）"
+          ],
+          "flow": [
+            "训练域",
+            "CLIP 表征",
+            "提示与域不变学习",
+            "未见域评估"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "论文 · Image and Vision Computing",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0262885624004645"
+        }
+      ],
+      "boundary": "性能结论应对应论文中的数据集、基线和评价协议。",
+      "scene": "pipeline",
+      "relatedProjects": []
+    },
+    {
+      "id": "trajectory-vault",
+      "title": "Agent Trajectory Vault",
+      "subtitle": "把执行轨迹变成可检查的数据。",
+      "category": "Coding Agent",
+      "status": "开发中",
+      "visibility": "visible",
+      "order": 70,
+      "role": "跨工具轨迹导入、规范化与数据视图",
+      "tags": [
+        "Python",
+        "JSONL",
+        "Schema",
+        "数据脱敏",
+        "Agent Evaluation"
+      ],
+      "summary": "整理多种 Agent 的执行轨迹，构建统一结构与派生视图，为后续评估和训练数据研究准备基础。",
+      "steps": [
+        {
+          "id": "step-1",
+          "title": "先解决数据能不能用",
+          "body": "导入 Codex、Cursor 与 OpenCode 轨迹，在规范化记录之上构造分析视图。",
+          "points": [
+            "保留原始来源与规范化字段之间的关系",
+            "规范化数据及派生视图均需要脱敏",
+            "数据视图不等于已经完成模型训练"
+          ],
+          "flow": [
+            "多源轨迹",
+            "脱敏 / 规范化",
+            "Canonical Schema",
+            "分析视图"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "GitHub · Trajectory Vault",
+          "url": "https://github.com/ywzhang1031/agent-trajectory-vault"
+        }
+      ],
+      "boundary": "当前阶段：轨迹数据基础设施与分析视图；后续用于评估与训练数据研究。",
+      "scene": "pipeline",
+      "relatedProjects": []
+    },
+    {
+      "id": "eyecare",
+      "title": "EyeCare",
+      "subtitle": "把一个小需求，做成日常可用的工具。",
+      "category": "其他作品",
+      "status": "阶段实验完成",
+      "visibility": "visible",
+      "order": 80,
+      "role": "iOS / watchOS 应用开发",
+      "tags": [
+        "Swift",
+        "iOS",
+        "watchOS"
+      ],
+      "summary": "围绕 20 分钟工作、20 秒休息的护眼节奏，探索轻量的手机与手表提醒体验。",
+      "steps": [
+        {
+          "id": "step-1",
+          "title": "从日常问题到小型产品",
+          "body": "以简单提醒交互为核心，实践移动端应用组织与多设备体验。",
+          "points": [
+            "Swift 原生应用",
+            "iOS / watchOS 交互",
+            "提醒节奏与日常使用场景"
+          ],
+          "flow": [
+            "工作时段",
+            "计时",
+            "休息提醒",
+            "下一轮"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "GitHub · EyeCare",
+          "url": "https://github.com/ywzhang1031/EyeCare"
+        }
+      ],
+      "boundary": "个人项目：Swift 原生应用与多设备提醒体验。",
+      "scene": "pipeline",
+      "relatedProjects": []
+    }
+  ],
+  "resume": {
+    "workProjects": [
+      "landing-protection",
+      "video-pipeline"
+    ],
+    "selectedProjects": [
+      "inference-lab",
+      "nanochat-lab",
+      "my-agent",
+      "dsh-aside",
+      "dalsclip"
+    ]
+  }
+}

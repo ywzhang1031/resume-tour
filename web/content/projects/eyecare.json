@@ -1,0 +1,33 @@
+{
+  "id": "eyecare",
+  "title": "EyeCare",
+  "subtitle": "把一个小需求，做成日常可用的工具。",
+  "category": "其他作品",
+  "status": "阶段实验完成",
+  "visibility": "visible",
+  "order": 80,
+  "role": "iOS / watchOS 应用开发",
+  "tags": ["Swift", "iOS", "watchOS"],
+  "summary": "围绕 20 分钟工作、20 秒休息的护眼节奏，探索轻量的手机与手表提醒体验。",
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "从日常问题到小型产品",
+      "body": "以简单提醒交互为核心，实践移动端应用组织与多设备体验。",
+      "points": [
+        "Swift 原生应用",
+        "iOS / watchOS 交互",
+        "提醒节奏与日常使用场景"
+      ],
+      "flow": ["工作时段", "计时", "休息提醒", "下一轮"]
+    }
+  ],
+  "links": [
+    {
+      "label": "GitHub · EyeCare",
+      "url": "https://github.com/ywzhang1031/EyeCare"
+    }
+  ],
+  "boundary": "个人项目：Swift 原生应用与多设备提醒体验。",
+  "scene": "pipeline"
+}

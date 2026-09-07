@@ -1,0 +1,33 @@
+{
+  "id": "trajectory-vault",
+  "title": "Agent Trajectory Vault",
+  "subtitle": "把执行轨迹变成可检查的数据。",
+  "category": "Coding Agent",
+  "status": "开发中",
+  "visibility": "visible",
+  "order": 70,
+  "role": "跨工具轨迹导入、规范化与数据视图",
+  "tags": ["Python", "JSONL", "Schema", "数据脱敏", "Agent Evaluation"],
+  "summary": "整理多种 Agent 的执行轨迹，构建统一结构与派生视图，为后续评估和训练数据研究准备基础。",
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "先解决数据能不能用",
+      "body": "导入 Codex、Cursor 与 OpenCode 轨迹，在规范化记录之上构造分析视图。",
+      "points": [
+        "保留原始来源与规范化字段之间的关系",
+        "规范化数据及派生视图均需要脱敏",
+        "数据视图不等于已经完成模型训练"
+      ],
+      "flow": ["多源轨迹", "脱敏 / 规范化", "Canonical Schema", "分析视图"]
+    }
+  ],
+  "links": [
+    {
+      "label": "GitHub · Trajectory Vault",
+      "url": "https://github.com/ywzhang1031/agent-trajectory-vault"
+    }
+  ],
+  "boundary": "当前阶段：轨迹数据基础设施与分析视图；后续用于评估与训练数据研究。",
+  "scene": "pipeline"
+}

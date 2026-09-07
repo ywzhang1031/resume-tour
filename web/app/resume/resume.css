@@ -1,0 +1,160 @@
+.print-resume {
+  max-width: 900px;
+  margin: 35px auto 70px;
+  padding: 35px 45px;
+  background: #fff;
+  color: #172014;
+  line-height: 1.8;
+  font-size: 16px;
+  border-radius: 8px;
+}
+.print-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+.print-toolbar a {
+  font-size: 14px;
+}
+.print-resume header {
+  border-bottom: 2px solid #46632e;
+  padding-bottom: 20px;
+}
+.print-resume header h1 {
+  font-size: 34px;
+  font-weight: 650;
+  margin: 0;
+}
+.print-resume header h1 span {
+  font-size: 20px;
+  margin-left: 20px;
+  font-weight: 400;
+}
+.print-resume header p {
+  margin: 5px 0;
+}
+.print-resume header > div {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+.print-resume section {
+  margin-top: 26px;
+}
+.print-resume h2 {
+  font-size: 21px;
+  font-weight: 650;
+  color: #385824;
+  border-bottom: 1px solid #bbc8b1;
+  padding-bottom: 7px;
+  margin: 0 0 16px;
+}
+.print-resume h3 {
+  font-size: 17px;
+  font-weight: 650;
+  margin: 0 0 5px;
+}
+.print-resume h3 > span {
+  float: right;
+  font-size: 14px;
+  font-weight: 400;
+  color: #505d49;
+}
+.print-resume p {
+  margin: 7px 0;
+}
+.print-resume article {
+  margin: 20px 0;
+  break-inside: avoid;
+}
+.print-resume ul {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+.print-resume li {
+  margin: 5px 0;
+}
+.print-resume .resume-boundary {
+  font-size: 13px;
+  color: #57624f;
+}
+.resume-source {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  color: #3b5c27;
+}
+.print-resume footer {
+  font-size: 12px;
+  color: #57624f;
+  margin-top: 30px;
+  border-top: 1px solid #bbc8b1;
+  padding-top: 15px;
+}
+@media (max-width: 760px) {
+  .print-resume {
+    padding: 25px 20px;
+    margin: 0;
+    border-radius: 0;
+  }
+  .print-resume h3 > span {
+    float: none;
+    display: block;
+  }
+  .print-resume header h1 span {
+    display: block;
+    margin: 0;
+  }
+  .print-toolbar {
+    flex-wrap: wrap;
+  }
+}
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+  .print-resume {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.55;
+  }
+  .print-toolbar {
+    display: none;
+  }
+  .print-resume h2 {
+    font-size: 13pt;
+  }
+  .print-resume h3 {
+    font-size: 11pt;
+  }
+  .print-resume header h1 {
+    font-size: 24pt;
+  }
+  .print-resume header h1 span {
+    font-size: 15pt;
+  }
+  .print-resume article {
+    margin: 14px 0;
+  }
+  .print-resume section {
+    margin-top: 17px;
+  }
+  .print-resume .resume-boundary {
+    font-size: 9pt;
+  }
+  body {
+    background: #fff;
+    color: #172014;
+  }
+  a {
+    color: inherit;
+  }
+  .resume-source {
+    font-size: 8pt;
+  }
+}

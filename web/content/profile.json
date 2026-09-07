@@ -1,0 +1,91 @@
+{
+  "name": "张跃文",
+  "englishName": "Yuewen Zhang",
+  "role": "AI Infra / Systems Engineer",
+  "email": "z15000675672@gmail.com",
+  "github": "https://github.com/ywzhang1031",
+  "intro": "从端侧实时系统，到 LLM Infra。\n我关心计算的延迟、数据的流动，\n以及系统在真实场景中的可靠性。",
+  "portrait": "/images/yuewen-portrait.png",
+  "updated": "2026-09-07",
+  "stack": [
+    {
+      "id": "systems",
+      "title": "系统工程",
+      "level": "工作交付",
+      "summary": "并发、数据流与资源管理",
+      "tags": [
+        "C++",
+        "Linux",
+        "多线程 / atomic / mutex",
+        "iceoryx · 零拷贝 IPC",
+        "RAII / 环形缓冲区"
+      ],
+      "projects": ["landing-protection", "video-pipeline"]
+    },
+    {
+      "id": "edge",
+      "title": "端侧 AI 与视觉",
+      "level": "工作交付",
+      "summary": "把模型接入受限算力的实时系统",
+      "tags": [
+        "Horizon X5M / BPU",
+        "NV12 / YUV",
+        "OpenCV",
+        "H.265 硬件编码",
+        "模型 I/O 与后处理"
+      ],
+      "projects": ["landing-protection", "video-pipeline"]
+    },
+    {
+      "id": "llm",
+      "title": "LLM Infra",
+      "level": "项目实践",
+      "summary": "推理测量与单设备训练实践",
+      "tags": [
+        "Python / PyTorch",
+        "HTTP / SSE",
+        "TTFT / TPOT",
+        "负载生成与指标校验",
+        "Apple Silicon / MPS"
+      ],
+      "projects": ["inference-lab", "nanochat-lab"]
+    },
+    {
+      "id": "agents",
+      "title": "Coding Agent",
+      "level": "项目实践",
+      "summary": "可控运行时、插件与执行轨迹",
+      "tags": [
+        "TypeScript / React",
+        "工具协议与权限",
+        "JSONL / 事件回放",
+        "Context / Compaction",
+        "DSH 插件"
+      ],
+      "projects": ["my-agent", "dsh-aside", "trajectory-vault"]
+    }
+  ],
+  "experience": [
+    {
+      "period": "2024.07 — 2026.06",
+      "org": "影石 Insta360 · Antigravity",
+      "role": "感知导航 · 高性能计算工程师",
+      "description": "负责无人机降落保护与多路视频编码模块，将 AI 视觉、多源传感器与硬件能力接入实时系统。",
+      "projects": ["landing-protection", "video-pipeline"]
+    },
+    {
+      "period": "2021 — 2024",
+      "org": "中国科学院 · 上海微系统所",
+      "role": "硕士 · 域泛化与视觉语言模型",
+      "description": "围绕 CLIP 的域泛化开展研究。2021—2022 年在中国科学技术大学联合培养课程阶段，2024 年硕士毕业。",
+      "projects": ["dalsclip"]
+    },
+    {
+      "period": "2017 — 2021",
+      "org": "上海海事大学",
+      "role": "本科 · 通信工程",
+      "description": "从通信与信号处理出发，逐步走向模型、系统与工程实现。",
+      "projects": []
+    }
+  ]
+}

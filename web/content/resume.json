@@ -1,0 +1,10 @@
+{
+  "workProjects": ["landing-protection", "video-pipeline"],
+  "selectedProjects": [
+    "inference-lab",
+    "nanochat-lab",
+    "my-agent",
+    "dsh-aside",
+    "dalsclip"
+  ]
+}

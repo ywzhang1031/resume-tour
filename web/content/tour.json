@@ -1,0 +1,66 @@
+{
+  "title": "从实时系统到 AI Infra",
+  "chapters": [
+    {
+      "id": "intro",
+      "title": "我是谁",
+      "kind": "intro",
+      "duration": "45 秒"
+    },
+    {
+      "id": "journey",
+      "title": "经历与方向",
+      "kind": "journey",
+      "duration": "45 秒"
+    },
+    {
+      "id": "landing-protection",
+      "project": "landing-protection",
+      "title": "降落保护",
+      "kind": "project",
+      "duration": "2 分钟"
+    },
+    {
+      "id": "video-pipeline",
+      "project": "video-pipeline",
+      "title": "视频编码",
+      "kind": "project",
+      "duration": "1 分钟"
+    },
+    {
+      "id": "inference-lab",
+      "project": "inference-lab",
+      "title": "LLM Infra",
+      "kind": "project",
+      "duration": "1 分钟"
+    },
+    {
+      "id": "nanochat-lab",
+      "project": "nanochat-lab",
+      "title": "训练实践",
+      "kind": "project",
+      "duration": "45 秒"
+    },
+    {
+      "id": "my-agent",
+      "project": "my-agent",
+      "title": "Coding Agent",
+      "kind": "project",
+      "duration": "45 秒"
+    },
+    {
+      "id": "dalsclip",
+      "project": "dalsclip",
+      "title": "研究经历",
+      "kind": "project",
+      "duration": "30 秒"
+    },
+    {
+      "id": "next",
+      "title": "下一站",
+      "kind": "closing",
+      "duration": "30 秒"
+    }
+  ],
+  "duration": "约 8 分钟"
+}

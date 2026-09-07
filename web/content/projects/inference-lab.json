@@ -1,0 +1,45 @@
+{
+  "id": "inference-lab",
+  "title": "LLM Inference Systems Lab",
+  "subtitle": "先把性能测准，再讨论优化。",
+  "category": "AI Infra",
+  "status": "开发中",
+  "visibility": "visible",
+  "order": 20,
+  "role": "独立设计负载、测量协议与分析流程",
+  "tags": ["Python", "HTTP", "SSE", "TTFT", "TPOT", "Benchmark"],
+  "summary": "构建可追溯的 LLM 推理测量工具，明确请求边界、流式输出语义、错误统计与延迟指标。",
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "从请求记录开始",
+      "body": "围绕原始请求记录建立测量链路，而不是只输出一组无法解释的吞吐数字。",
+      "points": [
+        "区分首 token、逐 token 与端到端延迟",
+        "错误请求单独统计，保留原始测量记录",
+        "优先使用服务端 usage，避免将 SSE 事件数当成 token 数"
+      ],
+      "flow": ["负载定义", "请求执行", "流式记录", "指标分析"]
+    },
+    {
+      "id": "step-2",
+      "title": "区分客户端排队与服务端耗时",
+      "body": "已建立闭环测量基线；继续推进 open-loop、HTTP 链路与时间字段校验。",
+      "points": [
+        "scheduled_at：计划到达时刻",
+        "submitted_at：实际提交时刻",
+        "两者差值用于识别客户端调度滞后"
+      ],
+      "flow": ["计划到达", "调度 / 排队", "实际提交", "首 token / 完成"]
+    }
+  ],
+  "links": [
+    {
+      "label": "GitHub · 公开基线",
+      "url": "https://github.com/ywzhang1031/llm-inference-systems-lab"
+    }
+  ],
+  "boundary": "当前环境：Apple Silicon；重点验证协议与指标。公开版为闭环基线，Open-loop 与 HTTP 链路正在迭代。",
+  "scene": "pipeline",
+  "note": "inference-lab.md"
+}
