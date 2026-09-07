@@ -34,3 +34,7 @@ The technical scenes are original, code-generated data-flow diagrams built with 
 ## Original recruitment PDF
 
 The active `profile.resumePdf` points to `web/public/files/yuewen-zhang-ai-agent.pdf`, copied unchanged from the author's explicitly selected `Desktop/resume/Chinese_version/resume_ai_agent.pdf`. It is the existing Chinese AI Agent resume, separate from the site-generated PDF. Updating website text does not rewrite this original document; replace the asset or change `resumePdf` when a new PDF is ready.
+
+## Portrait signature font
+
+`web/public/fonts/portrait-signature.ttf` is the Google Fonts text subset of [Ma Shan Zheng](https://github.com/google/fonts/tree/main/ofl/mashanzheng) for “我有一颗勇敢的心”, served locally to preserve the signature across devices. Its SIL Open Font License is retained in `web/public/fonts/MaShanZheng-OFL.txt`. If changing the caption, refresh this subset to include the new characters; other characters fall back to a local Kai-style or cursive font.

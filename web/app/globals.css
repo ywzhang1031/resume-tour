@@ -2401,32 +2401,38 @@ button:disabled {
   }
 }
 
-/* A full-width fade keeps the motto part of the photograph. */
+/* A local calligraphic subset keeps the caption quiet and consistent. */
+@font-face {
+  font-family: 'Portrait Signature';
+  src: url('/fonts/portrait-signature.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 .portrait-stage::after {
   content: '';
   position: absolute;
-  inset: 45% 0 0;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgb(12 17 14 / 15%) 35%,
-    rgb(12 17 14 / 75%) 100%
-  );
+  inset: 65% 0 0;
+  background: linear-gradient(180deg, transparent, rgb(12 17 14 / 42%));
   pointer-events: none;
 }
 .portrait-motto {
   position: absolute;
   z-index: 1;
-  inset: auto 0 0;
+  right: 22px;
+  bottom: 19px;
+  max-width: calc(100% - 44px);
   margin: 0;
-  padding: 28px 24px;
-  color: #fff;
-  font-size: clamp(19px, 2vw, 24px);
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  line-height: 1.6;
-  text-align: center;
-  text-shadow: 0 2px 12px rgb(0 0 0 / 30%);
+  color: rgb(250 245 234 / 78%);
+  font-family: 'Portrait Signature', 'Kaiti SC', KaiTi, cursive;
+  font-size: clamp(16px, 1.2vw, 18px);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  text-align: right;
+  transform: rotate(-4deg);
+  transform-origin: right bottom;
+  text-shadow: 0 1px 6px rgb(0 0 0 / 22%);
 }
 .stack-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
